@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C19W2VNX1R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C19W2VNX1R');
+</script>
+
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How I Manaege My Passwords | Saqib Mir</title>
+    
+    <link rel="stylesheet" href="/css/style.846851e9559cab40e58a5c52d570f554eeb4daeb287a8b95df0e5f10c4cfa113.css" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+	<script src="js/quotes.js"></script>
+
+</head>
+
+<body onload="randomQuote()">
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="logo" href="/">
+      Saqib Mir
+    </a>
+
+    <ul class="menu">
+      <li>
+        <a href="/">Home</a>
+      </li><li>
+        <a href="/blog">Blog</a>
+      </li><li>
+        <a href="/contact">Contact</a>
+      </li><li>
+        <a href="/about">About</a>
+      </li><li>
+        <a href="/links">Links</a>
+      </li><li>
+        <a href="https://github.com/saqibmir1">Git</a>
+      </li>
+    </ul>
+
+    <ul class="menu menu-social">
+      <li>
+        <a href="https://github.com/saqibmir1" target="_blank" rel="noopener noreferrer">
+          <svg role="img" width="28" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><title>GitHub</title><path fill='currentColor' d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
+
+        </a>
+      </li><li>
+        <a href="/index.xml" target="_blank" rel="noopener noreferrer">
+          <svg role="img" width="28" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><title>RSS Feed</title><path fill='currentColor' d="M3 3C12.9411 3 21 11.0589 21 21H18C18 12.7157 11.2843 6 3 6V3ZM3 10C9.07513 10 14 14.9249 14 21H11C11 16.5817 7.41828 13 3 13V10ZM3 17C5.20914 17 7 18.7909 7 21H3V17Z"></path></svg>
+
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="content">
+
+
+
+
+
+<header class="single-header content-inner full-width">
+    <h1 class="single-title">How I Manaege My Passwords</h1>
+
+    
+</header>
+
+
+<h2 id="introduction">Introduction</h2>
+<p>Here is how i manage my passwords securely.</p>
+<h2 id="what-i-use">What I use</h2>
+<p>I use <a href="https://keepassxc.org/" target="_blank" rel="noopener">KeePassXC</a> which is an offline and  password manager. It is encrypted at all times and no data is stored
+on remote servers. It is also cross platform and open source of course (GPLV3).</p>
+<h2 id="how-i-sync-it-across-my-devices">How I Sync It Across My Devices</h2>
+<p>So one issue with this secure and offline password manager is that it doesn&rsquo;t sync passwords
+across devices which is their motive and its upto the user to handle their passwords.
+This is what i did
+I have MEGA sync installed on all my devices and the synced folder has the database which is a kbdx file which is read by the
+KeePassXC application everytime it loads. All you have to do is set the databases (existing)
+path to the <code>synced_folder/passwords.kbdx</code> on every machine. Now whenever you make changes (ie create,
+remove, update, delete) passwords. the passwords.kbdx file gets updated and then synced
+automatically across all your devices. It is secure because the passwords.kbdx file
+is encrypted and can only be accessed using the master password you have set.</p>
+<h2 id="bonus-tips-on-how-to-make-a-strong-passwords">Bonus tips on how to make a strong passwords.</h2>
+<p>Typically, there are 2 methods of password cracking; brute force and dictionary attacks. So,</p>
+<ul>
+<li>
+<p><strong>Pick multiple words instead of single complex word:</strong>  <code>D0egc01n#</code> is a bad password
+because this would get completely
+wrecked by a GPU cluster because that might be calculating as many as hundred billion hashes per
+second.</p>
+</li>
+<li>
+<p><strong>Pick words that have less chance of being in the dictionary:</strong> For instance <code>kakarot illadelph chungus sussy baka</code> is a
+good password because its chance of being in a dictionary are very unlikely.</p>
+</li>
+<li>
+<p><strong>Dont pick words specific to you</strong>. Social engineering, NIGGA.</p>
+</li>
+</ul>
+
+
+</main>
+
+<footer class="site-footer">
+    <p><a href="/uncopyright">Uncopyrighted</a> by Saqib Mir. Last built January 3rd, 2024.</p>
+    <p>Built with <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>. View the source code <a href="https://github.com/saqibmir1/saqibmir1.github.io" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
+
+    <ul class="menu menu-social">
+      <li>
+        <a href="https://github.com/saqibmir1" target="_blank" rel="noopener noreferrer">
+          <svg role="img" width="28" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><title>GitHub</title><path fill='currentColor' d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
+
+        </a>
+      </li><li>
+        <a href="/index.xml" target="_blank" rel="noopener noreferrer">
+          <svg role="img" width="28" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><title>RSS Feed</title><path fill='currentColor' d="M3 3C12.9411 3 21 11.0589 21 21H18C18 12.7157 11.2843 6 3 6V3ZM3 10C9.07513 10 14 14.9249 14 21H11C11 16.5817 7.41828 13 3 13V10ZM3 17C5.20914 17 7 18.7909 7 21H3V17Z"></path></svg>
+
+        </a>
+      </li>
+    </ul>
+</footer>
+
+</body>
+</html>
+

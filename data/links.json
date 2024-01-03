@@ -1,0 +1,33 @@
+{
+  "links": {
+    "title": "Interesting Websites by Individuals",
+    "description": "Websites not about any specific topic, but included because I like their writing.",
+    "links": [
+      {
+        "title": "~bt",
+        "link": "https://bt.ht/",
+        "rss": "https://bt.ht/atom.xml"
+      },
+      {
+        "title": "bikobatanari",
+        "link": "https://www.bikobatanari.art/"
+      },
+      {
+        "title": "Jared White",
+        "link": "https://jaredwhite.com/",
+        "rss": "https://jaredwhite.com/feed.xml"
+      },
+      {
+        "title": "Luke Smith",
+        "link": "https://lukesmith.xyz/",
+        "rss": "https://lukesmith.xyz/index.xml"
+      },
+      {
+        "title": "Manuel Moreale",
+        "link": "https://manuelmoreale.com/",
+        "rss": "https://manuelmoreale.com/feed/rss"
+      }
+    ]
+  }
+
+}

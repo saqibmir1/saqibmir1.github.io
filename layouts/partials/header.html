@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C19W2VNX1R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C19W2VNX1R');
+</script>
+
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    {{ $style := resources.Get "/css/style.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+	{{ with .OutputFormats.Get "rss" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+	<script src="js/quotes.js"></script>
+
+</head>
+
+<body onload="randomQuote()">
+
+{{ partial "nav.html" . }}
+<main class="content">

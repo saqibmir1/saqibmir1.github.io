@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+  <title>Last.fm Stats</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+
+    .lead {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .text-danger {
+      color: red;
+    }
+
+    .text-muted {
+      color: #666;
+    }
+
+    .heart-icon {
+      color: red;
+      margin-left: 5px;
+    }
+
+    .now-playing {
+      color: red;
+      font-weight: bold;
+    }
+
+    .track-name {
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script>
+    const apiKey = '7a207a14237e4d7914a9dbc9b110a38b';
+    const username = 'SisyphusButSus';
+
+    async function fetchTopData() {
+      try {
+        // Fetch user info
+        const userResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${username}&api_key=${apiKey}&format=json`);
+        const userData = await userResponse.json();
+
+        if (userResponse.ok) {
+          const scrobbles = userData.user.playcount;
+          const creationDate = moment.unix(userData.user.registered.unixtime).format('MMMM Do, YYYY');
+          document.getElementById('scrobbles').textContent = `Total Scrobbles: ${scrobbles}`;
+          document.getElementById('creation-date').textContent = `Since: ${creationDate}`;
+        } else {
+          console.log(`Error: ${userData.message}`);
+        }
+
+        // Fetch recent tracks
+        const recentResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=10`);
+        const recentData = await recentResponse.json();
+
+        if (recentResponse.ok) {
+          const tracks = recentData.recenttracks.track;
+          const recentList = document.getElementById('recent-list');
+
+          recentList.innerHTML = ''; // Clear the list before updating
+
+          tracks.forEach((track, index) => {
+            const name = track.name;
+            const artist = track.artist['#text'];
+            const isNowPlaying = track['@attr'] && track['@attr'].nowplaying;
+            const timestamp = track.date && parseInt(track.date.uts);
+
+            const listItem = document.createElement('li');
+            const trackName = document.createElement('span');
+            trackName.classList.add('track-name');
+            trackName.textContent = name;
+            listItem.appendChild(trackName);
+            listItem.innerHTML += ` by ${artist}`;
+            if (isNowPlaying) {
+              listItem.classList.add('now-playing');
+              listItem.innerHTML += ` <i class="fas fa-music"></i> (Now Playing)`;
+
+            // Get the URL of the largest image
+           const imageUrl = track.image.find(image => image.size === 'extralarge')['#text'];
+
+          // Create new img element
+          const imgElement = document.createElement('img');
+          imgElement.src = imageUrl;
+
+          // Create a new div element
+          const imgWrapper = document.createElement('div');
+          imgWrapper.style.display = 'flex';
+          imgWrapper.style.justifyContent = 'center';
+
+          // Append the img element to the div
+          imgWrapper.appendChild(imgElement);
+
+          // Append the div to the list item
+          listItem.appendChild(imgWrapper);
+
+            }
+            if (timestamp) {
+              const timeElement = document.createElement('span');
+              timeElement.classList.add('text-muted');
+              timeElement.textContent = ` - ${moment.unix(timestamp).fromNow()}`;
+              listItem.appendChild(timeElement);
+            }
+            recentList.appendChild(listItem);
+          });
+        } else {
+          console.log(`Error: ${recentData.message}`);
+        }
+
+        // Fetch top artists
+        const artistResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=5`);
+        const artistData = await artistResponse.json();
+
+        if (artistResponse.ok) {
+          const artists = artistData.topartists.artist;
+          const artistList = document.getElementById('artist-list');
+
+          artistList.innerHTML = ''; // Clear the list before updating
+
+          artists.forEach((artist, index) => {
+            const name = artist.name;
+            const playCount = artist.playcount;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${index + 1}. ${name} - ${playCount} plays`;
+            artistList.appendChild(listItem);
+          });
+        } else {
+          console.log(`Error: ${artistData.message}`);
+        }
+
+        // Fetch top albums
+        const albumResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=5`);
+        const albumData = await albumResponse.json();
+
+        if (albumResponse.ok) {
+          const albums = albumData.topalbums.album;
+          const albumList = document.getElementById('album-list');
+
+          albumList.innerHTML = ''; // Clear the list before updating
+
+          albums.forEach((album, index) => {
+            const name = album.name;
+            const artist = album.artist.name;
+            const playCount = album.playcount;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${index + 1}. ${name} by ${artist} - ${playCount} plays`;
+            albumList.appendChild(listItem);
+          });
+        } else {
+          console.log(`Error: ${albumData.message}`);
+        }
+
+        // Fetch top tracks
+        const trackResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=10`);
+        const trackData = await trackResponse.json();
+
+        if (trackResponse.ok) {
+          const tracks = trackData.toptracks.track;
+          const trackList = document.getElementById('track-list');
+
+          trackList.innerHTML = ''; // Clear the list before updating
+
+          tracks.forEach((track, index) => {
+            const name = track.name;
+            const artist = track.artist.name;
+            const playCount = track.playcount;
+
+            const listItem = document.createElement('li');
+            const trackName = document.createElement('span');
+            trackName.classList.add('track-name');
+            trackName.textContent = name;
+            listItem.appendChild(trackName);
+            listItem.innerHTML += ` by ${artist} - ${playCount} plays`;
+            trackList.appendChild(listItem);
+          });
+        } else {
+          console.log(`Error: ${trackData.message}`);
+        }
+
+        // Fetch loved tracks
+        const lovedResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=${username}&api_key=${apiKey}&format=json&limit=1000`);
+        const lovedData = await lovedResponse.json();
+
+        if (lovedResponse.ok) {
+          const lovedTracks = lovedData.lovedtracks.track;
+          const lovedList = document.getElementById('loved-list');
+
+          lovedList.innerHTML = ''; // Clear the list before updating
+
+          lovedTracks.forEach((track) => {
+            const name = track.name;
+            const artist = track.artist.name;
+
+            const listItem = document.createElement('li');
+            const trackName = document.createElement('span');
+            trackName.classList.add('track-name');
+            trackName.textContent = name;
+            listItem.appendChild(trackName);
+            listItem.innerHTML += ` by ${artist} <i class="fas fa-heart heart-icon"></i>`;
+            lovedList.appendChild(listItem);
+          });
+        } else {
+          console.log(`Error: ${lovedData.message}`);
+        }
+      } catch (error) {
+        console.log('An error occurred:', error);
+      }
+    }
+
+    // Automatically update every 30 seconds
+    setInterval(fetchTopData, 30000);
+
+    window.addEventListener('DOMContentLoaded', fetchTopData);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+    <h1>Last.fm Stats of Saqib Mir</h1>
+
+    <p class="lead" id="scrobbles"></p>
+    <p class="lead" id="creation-date"></p>
+</header>
+    <div>
+      <h2>Recently Scrobbled Tracks</h2>
+      <ul id="recent-list"></ul>
+    </div>
+
+    <div>
+      <h2>Top Artists of All Time</h2>
+      <ul id="artist-list"></ul>
+    </div>
+
+    <div>
+      <h2>Top Albums of All Time</h2>
+      <ul id="album-list"></ul>
+    </div>
+
+    <div>
+      <h2>Top Tracks of All Time</h2>
+      <ul id="track-list"></ul>
+    </div>
+
+    <div>
+      <h2>Loved Tracks</h2>
+      <ul id="loved-list"></ul>
+    </div>
+<br>
+    <div class="disclaimer">
+        <blockquote>All the data gets refreshed every 30 seconds.</blockquote>
+    </div>
+  </div>
+  <hr>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Saqib Mir</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in linux on Saqib Mir's website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+    <lastBuildDate>Wed, 07 Jun 2023 18:23:07 +0530</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switching to Hyprland</title>
+      <link>/blog/switching-to-hyprland/</link>
+      <pubDate>Wed, 07 Jun 2023 18:23:07 +0530</pubDate>
+      
+      <guid>/blog/switching-to-hyprland/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://hyprland.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hyprland&lt;/a&gt; is a dynamic tiling &lt;a href=&#34;https://wayland.freedesktop.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wayland&lt;/a&gt; (a replacement for the X11 window system protocol and architectur) compositor based on &lt;a href=&#34;https://way-cooler.org/book/wlroots_introduction.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;wlroots&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I have used tiling window manager ever since i came to know about them (very recently really). I was using dwm which is based on xorg but since everybody was moving to hyprland
+i decided i should move to wayland too since it is modern and more efficient than xorg.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-hyprland-again&#34;&gt;What is hyprland (again)&lt;/h2&gt;
+&lt;p&gt;Hyprland is a dynamic tiling Wayland compositor based on wlroots. Although is an under development project, but it has already gained a lot of popularity and even though things break, it&amp;rsquo;s not a big deal. I can fix them with a little research (i have no life).&lt;/p&gt;
+&lt;p&gt;Hyprland supports a variety of layouts, including tiling, floating, and tabbed windows. It also has a number of features that are not found in other Wayland compositors, such as window animations, rounded corners, and Dual-Kawase Blur on transparent windows.&lt;/p&gt;
+&lt;h2 id=&#34;why-hyprland&#34;&gt;Why hyprland&lt;/h2&gt;
+&lt;p&gt;DWM had everything i ever needed but hyprland is just better. In DWM, i had to do a lot of stuff on my own. Patches, configuring touchpad, window swallowing etc. Not to mention
+DWM doesn&amp;rsquo;t have a config file. I had to modify the source code and recompile the software. Hyprland  has build in functionalities for so many things and the configuration file is so easy to understand.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install&#34;&gt;How to install&lt;/h2&gt;
+&lt;p&gt;Installation guide is on their wiki so i&amp;rsquo;ll be brief:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install these packages:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hyprland dunst pipewire wireplumber xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland kitty
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that the above package names are for arch linux and might be different for your distribution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start hyprland from tty by typing &lt;code&gt;Hyprland&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can add this line to your &lt;code&gt;.shellprofile&lt;/code&gt; file for autostart:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;exec Hyprland&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your hyprland desktop should launch. Hyprland stores its config at &lt;code&gt;$HOME/.config/hypr/hyprland.conf&lt;/code&gt;. Modify it to your liking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Protip: Launch kitty using &lt;code&gt;MOD+Q&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;my-rice&#34;&gt;My rice?&lt;/h2&gt;
+&lt;p&gt;
+
+
+&lt;figure class=&#34;full-width&#34;&gt;
+  
+
+  
+    
+    
+  
+
+  
+  
+
+  &lt;a href=&#34;hyprland-rice.png&#34;&gt;
+    &lt;picture&gt;
+      &lt;source srcset=&#34;/blog/switching-to-hyprland/hyprland-rice_hucc353bf7067527ea0ed8829a4628a1ab_870932_960x0_resize_q90_h2_box_3.webp&#34; type=&#34;image/webp&#34;&gt;
+      &lt;img src=&#34;/blog/switching-to-hyprland/hyprland-rice_hucc353bf7067527ea0ed8829a4628a1ab_870932_960x0_resize_q90_box_3.png&#34; alt=&#34;sax&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34; width=&#34;1920&#34; height=&#34;1080&#34; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+  
+&lt;/figure&gt;
+
+
+
+
+&lt;figure class=&#34;full-width&#34;&gt;
+  
+
+  
+    
+    
+  
+
+  
+  
+
+  &lt;a href=&#34;hyprland-rice-2.png&#34;&gt;
+    &lt;picture&gt;
+      &lt;source srcset=&#34;/blog/switching-to-hyprland/hyprland-rice-2_hu2aaedc44b636d9a6299ab6d743310f0d_677088_960x0_resize_q90_h2_box_3.webp&#34; type=&#34;image/webp&#34;&gt;
+      &lt;img src=&#34;/blog/switching-to-hyprland/hyprland-rice-2_hu2aaedc44b636d9a6299ab6d743310f0d_677088_960x0_resize_q90_box_3.png&#34; alt=&#34;sax2&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34; width=&#34;1920&#34; height=&#34;1080&#34; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+  
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;how-to-rice-like-mine&#34;&gt;How to rice like mine?&lt;/h2&gt;
+&lt;p&gt;I gotchu. I have uploaded my dotfiles on github &lt;a href=&#34;https://github.com/saqibmir1/hyprland-dotfiles.git&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. I also have written a shell script (inspired from: &lt;a href=&#34;https://christitus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;christitus.com&lt;/a&gt;) which will install
+the required packags and deploy my dotfiles.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-for-noobies&#34;&gt;How to (for noobies)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Install arch linux. Add a user with sudo perms. Login as a user.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run these commands one by one:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --depth &lt;span style=&#34;color:#f5a97f&#34;&gt;1&lt;/span&gt; https://github.com/saqibmir1/hyprland-dotfiles.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#91d7e3&#34;&gt;cd&lt;/span&gt; hyprland-dotfiles
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash install-hyprland.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;some-important-point-about-the-script&#34;&gt;Some important point about the script&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure you read the script before executing.&lt;/li&gt;
+&lt;li&gt;The dependencies are listed in the script itself.&lt;/li&gt;
+&lt;li&gt;The script will save log in install.log. If something goes wrong. You can always read the log file.&lt;/li&gt;
+&lt;li&gt;The script requires root access in order to install packages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;important-packages-used&#34;&gt;Important packages used:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Theme: Kripton&lt;/li&gt;
+&lt;li&gt;Terminal: Foot&lt;/li&gt;
+&lt;li&gt;Browser: Firefox&lt;/li&gt;
+&lt;li&gt;Application Launcher: Rofi&lt;/li&gt;
+&lt;li&gt;Status Bar: Waybar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-basic-keybindings&#34;&gt;Some basic keybindings:&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;function&lt;/th&gt;
+&lt;th&gt;keybinding&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;launch terminal&lt;/td&gt;
+&lt;td&gt;Mod+Enter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;toggle fullscreen&lt;/td&gt;
+&lt;td&gt;Mod+W&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;toggle master&lt;/td&gt;
+&lt;td&gt;Mod+SPACE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;close window&lt;/td&gt;
+&lt;td&gt;Mod+Q&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;launch thunar&lt;/td&gt;
+&lt;td&gt;Mod+E&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;launch firefox&lt;/td&gt;
+&lt;td&gt;Mod+B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;launch clipboard&lt;/td&gt;
+&lt;td&gt;Mod+V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;launch rofi&lt;/td&gt;
+&lt;td&gt;Mod+P&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;powermenu&lt;/td&gt;
+&lt;td&gt;Mod+BACKSPACE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lock screen&lt;/td&gt;
+&lt;td&gt;Mod+L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

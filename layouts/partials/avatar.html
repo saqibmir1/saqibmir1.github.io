@@ -1,0 +1,15 @@
+{{ $src := resources.Get "images/avatar.jpg" }}
+
+{{ $data := newScratch }}
+{{ $data.Set "webp" ($src.Resize "255x webp q90") }}
+{{ $data.Set "fallback" ($src.Resize "255x q90") }}
+{{ $webp := $data.Get "webp" }}
+{{ $fallback := $data.Get "fallback" }}
+
+<figure>
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+      <img src="{{ $fallback.RelPermalink }}" alt="{{ site.Title }}" loading="eager" width="{{ $src.Width }}" height="{{ $src.Height }}" />
+    </picture>
+</figure>
+
