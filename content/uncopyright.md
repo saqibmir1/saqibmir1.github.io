@@ -6,4 +6,4 @@ All content on this website is copyright free. Yes, that means that everything i
 
 Attribution is appreciated, but not required.
 
-More specifically, all the content is under the [Unlicense](https://unlicense.org/). You can find the full "license" on the [GitHub repo for this project](https://github.com/saqibmir1/saqibmir1.github.io/blob/master/LICENSE.md).
+More specifically, all the content is under the [Unlicense](https://unlicense.org/). You can find the full "license" on the [GitHub repo for this project](https://github.com/saqibmir1/saqibmir.me/blob/master/LICENSE.md).

@@ -33,7 +33,7 @@ title = "Saqib Mir"
 
   [[menu.main]]
     name = "Git"
-    url = "https://github.com/saqibmir1"
+    url = "https://git.saqibmir.me"
     weight = 60
 
   [[menu.social]]
