@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Contact | Saqib Mir</title>
+	<title>Auto Arch and Hyprland Script Update | Saqib Mir</title>
     
     <link rel="stylesheet" href="/css/style.846851e9559cab40e58a5c52d570f554eeb4daeb287a8b95df0e5f10c4cfa113.css" type="text/css" media="all" />
 	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
@@ -58,21 +58,69 @@
 
 
 <header class="single-header content-inner full-width">
-    <h1 class="single-title">Contact</h1>
+    <h1 class="single-title">Auto Arch and Hyprland Script Update</h1>
 
     
 </header>
 
 
-<h2 id="how-to-reach-me">How to reach me?</h2>
+<h2 id="introduction">Introduction</h2>
+<p>I&rsquo;ve recently made some updates to my ()[Auto Arch script] and ()[Hyprland Dotfiles] scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user&rsquo;s home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.</p>
+<h3 id="changes-in-auto-arch">Changes in <code>auto-arch</code></h3>
 <ul>
-<li><a href="mailto:mirsaquib3737@gmail.com">Email</a>: Feel free to reach out to me via email anytime.</li>
-<li><a href="https://matrix.to/#/#prismcold:matrix.org" target="_blank" rel="noopener">Matrix</a>: Mostly inactive here, but if you wanna connect more privately, reach me out.</li>
-<li><a href="https://t.me/sisyphusbutsus" target="_blank" rel="noopener">Telegram</a>: I&rsquo;m 24/7 active on telegram :)</li>
-<li><a href="https://www.last.fm/user/SisyphusButSus" target="_blank" rel="noopener">last.fm</a>: Get a glimpse into my favorite songs and artists on Last.fm</li>
-<li>IRC: sisypus @ libera.chat</li>
-<li>PGP: <a href="saqib.gpg">Download Here</a></li>
+<li>
+<p>Instead of 3 scripts for install, chroot, postinstall, I have combined them as one script. The script now</p>
+<ul>
+<li>Formats partitions</li>
+<li>Mounts partitions</li>
+<li>Installs packages</li>
+<li>Chroots into system and does post installation configurations</li>
+<li>grub installation etc</li>
 </ul>
+</li>
+<li>
+<p>In the end it clones <code>hyprland-dotfiles</code> repository in the <code>$HOME</code> directory of the user which can be used after robooting the system.</p>
+</li>
+</ul>
+<h3 id="changes-in-hyprland-dotfiles">Changes in <code>hyprland-dotfiles</code></h3>
+<ul>
+<li>changes in waybar config and styling (removed redundant code)</li>
+</ul>
+<p><em><strong>This is what the setup looks like now</strong></em>
+
+
+
+<figure class="full-width">
+  
+
+  
+    
+    
+  
+
+  
+  
+
+  <a href="sex.png">
+    <picture>
+      <source srcset="/blog/auto-arch-and-hyprland-script-update/sex_hu8d55a7fb6b5890028fe54eb066b07797_1704367_960x0_resize_q90_h2_box_3.webp" type="image/webp">
+      <img src="/blog/auto-arch-and-hyprland-script-update/sex_hu8d55a7fb6b5890028fe54eb066b07797_1704367_960x0_resize_q90_box_3.png" alt="sex.png" loading="lazy" decoding="async" width="1920" height="1080" />
+    </picture>
+  </a>
+  <figcaption>sex?</figcaption>
+</figure>
+</p>
+<h2 id="what-the-installation-looks-like-now">What the installation looks like now</h2>
+<p>This is the typical workflow if you want to install arch linux with my version of hyprland</p>
+<ul>
+<li>Step 1:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/saqibmir1/auto-arch.git
+</span></span><span style="display:flex;"><span>bash auto-arch/arch-install.sh
+</span></span></code></pre></div><p>Step 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>reboot
+</span></span></code></pre></div><p>Step 3:
+Login as user and run the <code>install-hyprland</code> script to install hyprland and deploy my dotfiles.</p>
 
 
 </main>

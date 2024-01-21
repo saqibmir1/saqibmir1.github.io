@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/blog/auto-arch-and-hyprland-script-update/</loc>
+    <lastmod>2024-01-21T19:59:36+05:30</lastmod>
+  </url><url>
     <loc>/blog/</loc>
-    <lastmod>2023-12-31T21:06:46+05:30</lastmod>
+    <lastmod>2024-01-21T19:59:36+05:30</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2023-12-31T21:06:46+05:30</lastmod>
+    <lastmod>2024-01-21T19:59:36+05:30</lastmod>
   </url><url>
     <loc>/blog/passwords/</loc>
     <lastmod>2023-12-31T21:06:46+05:30</lastmod>

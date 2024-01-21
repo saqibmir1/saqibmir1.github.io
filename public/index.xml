@@ -6,7 +6,73 @@
     <description>Recent content on Saqib Mir's website</description>
     <generator>Hugo -- gohugo.io</generator>
     
-    <lastBuildDate>Sun, 31 Dec 2023 21:06:46 +0530</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 19:59:36 +0530</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Arch and Hyprland Script Update</title>
+      <link>/blog/auto-arch-and-hyprland-script-update/</link>
+      <pubDate>Sun, 21 Jan 2024 19:59:36 +0530</pubDate>
+      
+      <guid>/blog/auto-arch-and-hyprland-script-update/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve recently made some updates to my ()[Auto Arch script] and ()[Hyprland Dotfiles] scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user&amp;rsquo;s home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.&lt;/p&gt;
+&lt;h3 id=&#34;changes-in-auto-arch&#34;&gt;Changes in &lt;code&gt;auto-arch&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instead of 3 scripts for install, chroot, postinstall, I have combined them as one script. The script now&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Formats partitions&lt;/li&gt;
+&lt;li&gt;Mounts partitions&lt;/li&gt;
+&lt;li&gt;Installs packages&lt;/li&gt;
+&lt;li&gt;Chroots into system and does post installation configurations&lt;/li&gt;
+&lt;li&gt;grub installation etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the end it clones &lt;code&gt;hyprland-dotfiles&lt;/code&gt; repository in the &lt;code&gt;$HOME&lt;/code&gt; directory of the user which can be used after robooting the system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;changes-in-hyprland-dotfiles&#34;&gt;Changes in &lt;code&gt;hyprland-dotfiles&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;changes in waybar config and styling (removed redundant code)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;This is what the setup looks like now&lt;/strong&gt;&lt;/em&gt;
+
+
+
+&lt;figure class=&#34;full-width&#34;&gt;
+  
+
+  
+    
+    
+  
+
+  
+  
+
+  &lt;a href=&#34;sex.png&#34;&gt;
+    &lt;picture&gt;
+      &lt;source srcset=&#34;/blog/auto-arch-and-hyprland-script-update/sex_hu8d55a7fb6b5890028fe54eb066b07797_1704367_960x0_resize_q90_h2_box_3.webp&#34; type=&#34;image/webp&#34;&gt;
+      &lt;img src=&#34;/blog/auto-arch-and-hyprland-script-update/sex_hu8d55a7fb6b5890028fe54eb066b07797_1704367_960x0_resize_q90_box_3.png&#34; alt=&#34;sex.png&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34; width=&#34;1920&#34; height=&#34;1080&#34; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+  &lt;figcaption&gt;sex?&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;what-the-installation-looks-like-now&#34;&gt;What the installation looks like now&lt;/h2&gt;
+&lt;p&gt;This is the typical workflow if you want to install arch linux with my version of hyprland&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/saqibmir1/auto-arch.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash auto-arch/arch-install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Step 2:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#cad3f5;background-color:#24273a;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Step 3:
+Login as user and run the &lt;code&gt;install-hyprland&lt;/code&gt; script to install hyprland and deploy my dotfiles.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>How I Manaege My Passwords</title>
       <link>/blog/passwords/</link>
