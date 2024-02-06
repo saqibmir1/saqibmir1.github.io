@@ -14,7 +14,7 @@
       
       <guid>/blog/auto-arch-and-hyprland-script-update/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;ve recently made some updates to my ()[Auto Arch script] and ()[Hyprland Dotfiles] scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user&amp;rsquo;s home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve recently made some updates to my &lt;a href=&#34;&#34;&gt;Auto Arch&lt;/a&gt; and &lt;a href=&#34;&#34;&gt;Hyrpland Dotfiles&lt;/a&gt; scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user&amp;rsquo;s home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.&lt;/p&gt;
 &lt;h3 id=&#34;changes-in-auto-arch&#34;&gt;Changes in &lt;code&gt;auto-arch&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -34,6 +34,8 @@
 &lt;h3 id=&#34;changes-in-hyprland-dotfiles&#34;&gt;Changes in &lt;code&gt;hyprland-dotfiles&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;changes in waybar config and styling (removed redundant code)&lt;/li&gt;
+&lt;li&gt;moved rofi -&amp;gt; wofi&lt;/li&gt;
+&lt;li&gt;some script imporvements&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;This is what the setup looks like now&lt;/strong&gt;&lt;/em&gt;
 
@@ -748,7 +750,7 @@ I use &lt;a href=&#34;https://archlinux.org/&#34; target=&#34;_blank&#34; rel=&#
 &lt;a href=&#34;https://codeberg.org/dnkl/foot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Foot&lt;/a&gt;: I use this tiny program called foot as my terminal emulator. Its pretty cool.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Shell&lt;/strong&gt;:
+&lt;p&gt;&lt;code&gt;Shell&lt;/code&gt;:
 I use &lt;a href=&#34;https://www.zsh.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;zsh&lt;/a&gt; as my default shell. It supports a lot of plugins and has auto tab completion and syntax highlighting too. You can try my zsh configurations here&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

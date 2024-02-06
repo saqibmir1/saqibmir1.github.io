@@ -5,7 +5,7 @@ draft = false
 +++
 ## Introduction
 
-I've recently made some updates to my ()[Auto Arch script] and ()[Hyprland Dotfiles] scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user's home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.
+I've recently made some updates to my [Auto Arch]() and [Hyrpland Dotfiles]() scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user's home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.
 
 
 
@@ -21,6 +21,8 @@ I've recently made some updates to my ()[Auto Arch script] and ()[Hyprland Dotfi
 
 ### Changes in ```hyprland-dotfiles```
 - changes in waybar config and styling (removed redundant code)
+- moved rofi -> wofi
+- some script imporvements
 
 ***This is what the setup looks like now***
 ![sex.png](sex.png "sex?")

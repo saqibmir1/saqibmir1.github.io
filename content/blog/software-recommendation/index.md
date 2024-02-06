@@ -23,7 +23,7 @@ I use [Arch Linux](https://archlinux.org/) beacuse of its simplicity and KISS ( 
 - ```Terminal```:
 [Foot](https://codeberg.org/dnkl/foot): I use this tiny program called foot as my terminal emulator. Its pretty cool.
 
-- **Shell**:
+- ```Shell```:
 I use [zsh](https://www.zsh.org/) as my default shell. It supports a lot of plugins and has auto tab completion and syntax highlighting too. You can try my zsh configurations here
 
 - ```Text Editor```:

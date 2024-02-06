@@ -1,7 +1,7 @@
  
 function randomQuote() {
           var quotes = [
-            "❝It is what it is.❞",
+
             "❝There is an infinite amount of hope in the universe ... but not for us.❞",
             "❝I have the true feeling of myself only when I am unbearably unhappy.❞",
             "❝Slept, awoke, slept, awoke, miserable life.❞",
@@ -36,9 +36,9 @@ function randomQuote() {
             "❝Congratulations, you played yourself.❞",
             "❝The key to more success is coco butter❞",
             "❝You smart! You loyal! You’re a genius!❞",
-            "❝I call her Chandelier!!!❞"
-            
-            
+            "❝I call her Chandelier!!!❞",
+            "❝SATA ANDAGIIIIIIIII!!!❞"
+
           ];
           var randomIndex = Math.floor(Math.random() * quotes.length);
           document.getElementById("random-quote").innerHTML = quotes[randomIndex];
