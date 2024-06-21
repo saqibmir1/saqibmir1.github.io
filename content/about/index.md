@@ -1,5 +1,14 @@
 ---
-title: About
+                title: "About Me"
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                showWordCount: false
+                showTableOfContents: false
+                
 ---
 
 
@@ -8,3 +17,5 @@ Greetings, mortal!. I am an outrageous concoction  of excessive self-conciousnes
         and tinkering with free and open source software.
 
 ![sisyphus](avatar.jpg "me when")
+
+[Checkout the music I'm listening to right now](lastfm.html)

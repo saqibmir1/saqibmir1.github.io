@@ -1,65 +1,116 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>/blog/auto-arch-and-hyprland-script-update/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-01-21T19:59:36+05:30</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/auto-arch-and-hyprland-script-update/</loc>
     <lastmod>2024-01-21T19:59:36+05:30</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2024-01-21T19:59:36+05:30</lastmod>
-  </url><url>
-    <loc>/blog/passwords/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/how-i-manage-my-passwords/</loc>
     <lastmod>2023-12-31T21:06:46+05:30</lastmod>
-  </url><url>
-    <loc>/blog/the-linkedin-struggle/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/the-linkedin-struggle/</loc>
     <lastmod>2023-12-25T10:38:42+05:30</lastmod>
-  </url><url>
-    <loc>/blog/stop-forking-around-with-free-license/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/stop-forking-around-with-free-license/</loc>
     <lastmod>2023-10-19T00:22:54+05:30</lastmod>
-  </url><url>
-    <loc>/projects/</loc>
-    <lastmod>2023-06-30T18:09:02+05:30</lastmod>
-  </url><url>
-    <loc>/contact/</loc>
-    <lastmod>2023-06-30T18:08:47+05:30</lastmod>
-  </url><url>
-    <loc>/links/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/linux/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/switching-to-hyprland/</loc>
     <lastmod>2023-06-07T18:23:07+05:30</lastmod>
-  </url><url>
-    <loc>/blog/switching-to-hyprland/</loc>
-    <lastmod>2023-06-07T18:23:07+05:30</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2023-06-07T18:23:07+05:30</lastmod>
-  </url><url>
-    <loc>/blog/building-my-site-with-hugo/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/building-my-site-with-hugo/</loc>
     <lastmod>2023-06-05T18:21:27+05:30</lastmod>
-  </url><url>
-    <loc>/blog/concepts-vs-tools/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/concepts-vs-tools/</loc>
     <lastmod>2023-05-23T18:21:35+05:30</lastmod>
-  </url><url>
-    <loc>/blog/paradox-of-choice/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/post-3/</loc>
+    <lastmod>2023-03-15T11:00:00-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/paradox-of-choice/</loc>
     <lastmod>2023-03-14T18:22:41+05:30</lastmod>
-  </url><url>
-    <loc>/blog/software-recommendation/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/post-2/</loc>
+    <lastmod>2023-02-15T10:00:00-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/post-1/</loc>
+    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-01-01T08:30:00-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/software-recommendation/</loc>
     <lastmod>2022-04-05T18:22:54+05:30</lastmod>
-  </url><url>
-    <loc>/blog/auto-arch/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/auto-arch/</loc>
     <lastmod>2022-04-02T18:21:12+05:30</lastmod>
-  </url><url>
-    <loc>/blog/custom-roms/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/custom-roms/</loc>
     <lastmod>2022-01-18T18:22:23+05:30</lastmod>
-  </url><url>
-    <loc>/about/</loc>
-  </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/uncopyright/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/about/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/contact/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/links/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

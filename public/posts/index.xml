@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Saqib Mir</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Saqib Mir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Saqib Mir</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 08:30:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Arch and Hyprland Script Update</title>
+      <link>http://localhost:1313/posts/auto-arch-and-hyprland-script-update/</link>
+      <pubDate>Sun, 21 Jan 2024 19:59:36 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/auto-arch-and-hyprland-script-update/</guid>
+      <description>Introduction # I&amp;rsquo;ve recently made some updates to my Auto Arch and Hyrpland Dotfiles scripts, aiming to streamline the Arch Linux installation process.</description>
+      
+    </item>
+    
+    <item>
+      <title>How I Manaege My Passwords</title>
+      <link>http://localhost:1313/posts/how-i-manage-my-passwords/</link>
+      <pubDate>Sun, 31 Dec 2023 21:06:46 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-i-manage-my-passwords/</guid>
+      <description>Introduction # Here is how i manage my passwords securely.</description>
+      
+    </item>
+    
+    <item>
+      <title>The LinkedIn Struggle</title>
+      <link>http://localhost:1313/posts/the-linkedin-struggle/</link>
+      <pubDate>Mon, 25 Dec 2023 10:38:42 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-linkedin-struggle/</guid>
+      <description>Introduction # LinkedIn, the supposed networking haven for professionals promising career opportunities and connections.</description>
+      
+    </item>
+    
+    <item>
+      <title>Stop Forking Around With Free License</title>
+      <link>http://localhost:1313/posts/stop-forking-around-with-free-license/</link>
+      <pubDate>Thu, 19 Oct 2023 00:22:54 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/stop-forking-around-with-free-license/</guid>
+      <description>Introduction # I noticed something that raises some red flags about two recent &amp;ldquo;indigenous&amp;rdquo; operating systems by India, BharOS and MayaOS.</description>
+      
+    </item>
+    
+    <item>
+      <title>Switching to Hyprland</title>
+      <link>http://localhost:1313/posts/switching-to-hyprland/</link>
+      <pubDate>Wed, 07 Jun 2023 18:23:07 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/switching-to-hyprland/</guid>
+      <description>Hyprland is a dynamic tiling Wayland (a replacement for the X11 window system protocol and architectur) compositor based on wlroots.</description>
+      
+    </item>
+    
+    <item>
+      <title>Building My Site With Hugo</title>
+      <link>http://localhost:1313/posts/building-my-site-with-hugo/</link>
+      <pubDate>Mon, 05 Jun 2023 18:21:27 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/building-my-site-with-hugo/</guid>
+      <description>Hugo is a static site generator which is fast, simle and minimal.</description>
+      
+    </item>
+    
+    <item>
+      <title>Concepts vs Tools</title>
+      <link>http://localhost:1313/posts/concepts-vs-tools/</link>
+      <pubDate>Tue, 23 May 2023 18:21:35 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/concepts-vs-tools/</guid>
+      <description>Most people learn tools instead of leraning concepts first.</description>
+      
+    </item>
+    
+    <item>
+      <title>Post 3</title>
+      <link>http://localhost:1313/posts/post-3/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/post-3/</guid>
+      <description>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis.</description>
+      
+    </item>
+    
+    <item>
+      <title>Paradox of Choice</title>
+      <link>http://localhost:1313/posts/paradox-of-choice/</link>
+      <pubDate>Tue, 14 Mar 2023 18:22:41 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/paradox-of-choice/</guid>
+      <description>Introduction # Paradox of choice - why more is less is a book by american psychologist Barry Schawtz where he argues that eliminating consumers choices can greatly reduce indecisiveness and stress for shoppers.</description>
+      
+    </item>
+    
+    <item>
+      <title>Post 2</title>
+      <link>http://localhost:1313/posts/post-2/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/post-2/</guid>
+      <description>Anim eiusmod irure incididunt sint cupidatat.</description>
+      
+    </item>
+    
+    <item>
+      <title>Post 1</title>
+      <link>http://localhost:1313/posts/post-1/</link>
+      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/post-1/</guid>
+      <description>Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod.</description>
+      
+    </item>
+    
+    <item>
+      <title>Software Recommendation</title>
+      <link>http://localhost:1313/posts/software-recommendation/</link>
+      <pubDate>Tue, 05 Apr 2022 18:22:54 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/software-recommendation/</guid>
+      <description>This is a list of all (almost) the software i use on my pc as well as on my phone.</description>
+      
+    </item>
+    
+    <item>
+      <title>Auto Arch</title>
+      <link>http://localhost:1313/posts/auto-arch/</link>
+      <pubDate>Sat, 02 Apr 2022 18:21:12 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/auto-arch/</guid>
+      <description>Auto Arch is a shell script i made to install a fully functional arch system including all the software i use</description>
+      
+    </item>
+    
+    <item>
+      <title>Custom Roms</title>
+      <link>http://localhost:1313/posts/custom-roms/</link>
+      <pubDate>Tue, 18 Jan 2022 18:22:23 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/custom-roms/</guid>
+      <description>Here&amp;rsquo;s a to-the-point, no bullshit guide on why and how to install custom rom on any andorid device.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

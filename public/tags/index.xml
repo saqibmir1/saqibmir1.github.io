@@ -2,10 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Saqib Mir</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on Saqib Mir's website</description>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Saqib Mir</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Saqib Mir</copyright>
+    <lastBuildDate>Wed, 07 Jun 2023 18:23:07 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Wed, 07 Jun 2023 18:23:07 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+      
+    </item>
     
-    <lastBuildDate>Wed, 07 Jun 2023 18:23:07 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blue</title>
+      <link>http://localhost:1313/tags/blue/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/blue/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Green</title>
+      <link>http://localhost:1313/tags/green/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/green/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Red</title>
+      <link>http://localhost:1313/tags/red/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/red/</guid>
+      <description></description>
+      
+    </item>
+    
   </channel>
 </rss>

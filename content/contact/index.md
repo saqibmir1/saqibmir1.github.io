@@ -1,7 +1,15 @@
 ---
-title: "Contact"
-date: 2023-06-30T18:08:47+05:30
-draft: false
+                title: "Contact Me"
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                showWordCount: false
+                showTableOfContents: false
+                
+                
 ---
 
 ## How to reach me?
@@ -12,4 +20,3 @@ draft: false
 - [last.fm](https://www.last.fm/user/SisyphusButSus): Get a glimpse into my favorite songs and artists on Last.fm
 - IRC: sisypus @ libera.chat
 - PGP: [Download Here](saqib.gpg)
-
