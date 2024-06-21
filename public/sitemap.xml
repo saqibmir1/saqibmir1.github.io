@@ -15,6 +15,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-01-21T19:59:36+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/how-i-manage-my-passwords/</loc>
     <lastmod>2023-12-31T21:06:46+05:30</lastmod>
     <changefreq>daily</changefreq>
@@ -51,32 +57,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/post-3/</loc>
-    <lastmod>2023-03-15T11:00:00-07:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://localhost:1313/posts/paradox-of-choice/</loc>
     <lastmod>2023-03-14T18:22:41+05:30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/post-2/</loc>
-    <lastmod>2023-02-15T10:00:00-07:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/post-1/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2023-01-01T08:30:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

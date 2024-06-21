@@ -79,42 +79,12 @@
     </item>
     
     <item>
-      <title>Post 3</title>
-      <link>http://localhost:1313/posts/post-3/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/post-3/</guid>
-      <description>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis.</description>
-      
-    </item>
-    
-    <item>
       <title>Paradox of Choice</title>
       <link>http://localhost:1313/posts/paradox-of-choice/</link>
       <pubDate>Tue, 14 Mar 2023 18:22:41 +0530</pubDate>
       
       <guid>http://localhost:1313/posts/paradox-of-choice/</guid>
       <description>Introduction # Paradox of choice - why more is less is a book by american psychologist Barry Schawtz where he argues that eliminating consumers choices can greatly reduce indecisiveness and stress for shoppers.</description>
-      
-    </item>
-    
-    <item>
-      <title>Post 2</title>
-      <link>http://localhost:1313/posts/post-2/</link>
-      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/post-2/</guid>
-      <description>Anim eiusmod irure incididunt sint cupidatat.</description>
-      
-    </item>
-    
-    <item>
-      <title>Post 1</title>
-      <link>http://localhost:1313/posts/post-1/</link>
-      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/post-1/</guid>
-      <description>Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod.</description>
       
     </item>
     
