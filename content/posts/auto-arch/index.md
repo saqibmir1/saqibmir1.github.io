@@ -36,4 +36,4 @@ Only the install.sh is required (which is downloaded using curl). Other scripts 
 
 **Github Link** to [Auto-Arch](https://github.com/saqibmir1/auto-arch)
 
-
+{{< github repo="saqibmir1/auto-arch">}}

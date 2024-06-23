@@ -107,5 +107,7 @@ google maps
 ```
 
 
+
 **Note**: You can check the list of all the software i use with hyprland [in this script](https://github.com/saqibmir1/hyprland-dotfiles/blob/main/install-hyprland.sh).
 
+{{< github repo="saqibmir1/hyprland-dotfiles">}}

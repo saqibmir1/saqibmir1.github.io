@@ -1,5 +1,5 @@
 ---
-title : 'How I Manaege My Passwords'
+title : 'How I Manage My Passwords'
 date : 2023-12-31T21:06:46+05:30
 draft : false 
 ---

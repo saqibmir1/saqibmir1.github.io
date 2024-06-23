@@ -185,3 +185,5 @@ In conclusion, migrating to hugo has been a transformative expreience. It is min
 of manually writing html for each blog, i highly recommend considering hugo. Dont be an internet peasant, be a landlord, own a website lol.
 
 **You can checkout my website's source code for more comprehensive guide [here](https://github.com/saqibmir1/saqibmir1.github.io)**
+
+{{< github repo="saqibmir1/saqibmir1.github.io">}}
