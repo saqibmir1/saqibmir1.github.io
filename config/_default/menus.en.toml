@@ -36,6 +36,12 @@
   pageRef = "/links"
   weight = 50
 
+[[main]]
+  name = "Chat"
+  pageRef = "/chat"
+  weight = 60
+
+
 
 #[[main]]
 #  name = "Parent"
