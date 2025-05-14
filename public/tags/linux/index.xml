@@ -14,7 +14,8 @@
       <pubDate>Wed, 07 Jun 2023 18:23:07 +0530</pubDate>
       
       <guid>http://localhost:1313/posts/switching-to-hyprland/</guid>
-      <description>Hyprland is a dynamic tiling Wayland (a replacement for the X11 window system protocol and architectur) compositor based on wlroots.</description>
+      <description>Hyprland is a dynamic tiling Wayland (a replacement for the X11 window system protocol and architectur) compositor based on wlroots.
+Introduction # I have used tiling window manager ever since i came to know about them (very recently really). I was using dwm which is based on xorg but since everybody was moving to hyprland i decided i should move to wayland too since it is modern and more efficient than xorg.</description>
       
     </item>
     
