@@ -18,4 +18,4 @@ Greetings, mortal!. I am an outrageous concoction  of excessive self-conciousnes
 
 ![sisyphus](avatar.jpg "me when")
 
-[Checkout the music I'm listening to right now](/content/about/lastfm.html)
+[Checkout the music I'm listening to right now](lastfm.html)

@@ -1,278 +1,747 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Last.fm Stats</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --background: #121212;
+      --surface: #282828;
+      --surface-light: #333333;
+      --primary: #1DB954;
+      --secondary: #B3B3B3;
+      --text: #FFFFFF;
+      --text-secondary: #B3B3B3;
+      --danger: #E91429;
+      --card-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
     body {
-      padding: 20px;
-      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
     }
-
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    
+    header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+      position: relative;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .profile-image {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #833ab4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 64px;
+      color: var(--text);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    .user-info {
+      flex: 1;
+    }
+    
     h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
-
+    
+    .stats-bar {
+      display: flex;
+      gap: 32px;
+      margin-top: 16px;
+    }
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    
+    section {
+      margin-bottom: 40px;
+    }
+    
     h2 {
       font-size: 24px;
-      margin-top: 30px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
     }
-
-    .lead {
-      font-size: 18px;
-      margin-bottom: 20px;
+    
+    h2 i {
+      margin-right: 12px;
+      color: var(--primary);
     }
-
-    .text-danger {
-      color: red;
+    
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
     }
-
-    .text-muted {
-      color: #666;
+    
+    .card {
+      background-color: var(--surface);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
     }
-
-    .heart-icon {
-      color: red;
-      margin-left: 5px;
+    
+    .card:hover {
+      background-color: var(--surface-light);
+      transform: translateY(-4px);
     }
-
+    
+    .card-image {
+      aspect-ratio: 1 / 1;
+      background-color: var(--surface-light);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .card-content {
+      padding: 16px;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .card-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .card-plays {
+      font-size: 12px;
+      color: var(--primary);
+      margin-top: 8px;
+    }
+    
+    .recent-tracks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    
+    .track-item {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background-color: var(--surface);
+      border-radius: var(--card-radius);
+      transition: var(--transition);
+    }
+    
+    .track-item:hover {
+      background-color: var(--surface-light);
+    }
+    
+    .track-image {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+    
+    .track-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .track-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .track-title {
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .track-artist {
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .track-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    
+    .track-timestamp {
+      white-space: nowrap;
+    }
+    
+    .loved {
+      color: var(--danger);
+    }
+    
     .now-playing {
-      color: red;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
     }
-
-    .track-name {
-      font-weight: bold;
+    
+    .now-playing-animation {
+      display: flex;
+      align-items: flex-end;
+      height: 16px;
+      gap: 2px;
+    }
+    
+    .bar {
+      width: 4px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      animation: sound 0ms -800ms linear infinite alternate;
+    }
+    
+    @keyframes sound {
+      0% {
+        height: 3px;
+      }
+      100% {
+        height: 16px;
+      }
+    }
+    
+    .bar:nth-child(1) {
+      animation-duration: 474ms;
+    }
+    
+    .bar:nth-child(2) {
+      animation-duration: 433ms;
+    }
+    
+    .bar:nth-child(3) {
+      animation-duration: 407ms;
+    }
+    
+    .placeholder-image {
+      background: linear-gradient(135deg, #404040, #282828);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-secondary);
+      font-size: 24px;
+    }
+    
+    .visualizer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(180deg, rgba(29, 185, 84, 0.2) 0%, rgba(18, 18, 18, 0) 100%);
+      z-index: -1;
+    }
+    
+    .tab-container {
+      display: flex;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .tab {
+      padding: 12px 24px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .tab.active {
+      color: var(--text);
+    }
+    
+    .tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+    }
+    
+    .tab:hover:not(.active) {
+      color: var(--text);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 24px 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+    }
+    
+    .refresh-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .refresh-animation {
+      display: inline-block;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .user-profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        font-size: 48px;
+      }
+      
+      .stats-bar {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      
+      .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="visualizer"></div>
+    
+    <header>
+      <div class="user-profile">
+        <div class="profile-image">
+          <i class="fas fa-headphones-alt"></i>
+        </div>
+        <div class="user-info">
+          <h1>Saqib Mir's Last.fm</h1>
+          <div class="stats-bar">
+            <div class="stat-item">
+              <div class="stat-value" id="scrobbles-count">-</div>
+              <div class="stat-label">Total Scrobbles</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="artists-count">-</div>
+              <div class="stat-label">Artists</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="loved-count">-</div>
+              <div class="stat-label">Loved Tracks</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="since-year">-</div>
+              <div class="stat-label">Member Since</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="tab-container">
+      <div class="tab active" data-tab="recently-played">Recently Played</div>
+      <div class="tab" data-tab="top-artists">Top Artists</div>
+      <div class="tab" data-tab="top-albums">Top Albums</div>
+      <div class="tab" data-tab="top-tracks">Top Tracks</div>
+      <div class="tab" data-tab="loved-tracks">Loved Tracks</div>
+    </div>
+    
+    <div class="tab-content active" id="recently-played">
+      <section>
+        <h2><i class="fas fa-history"></i>Recently Scrobbled Tracks</h2>
+        <div class="recent-tracks-list" id="recent-list"></div>
+      </section>
+    </div>
+    
+    <div class="tab-content" id="top-artists">
+      <section>
+        <h2><i class="fas fa-users"></i>Top Artists of All Time</h2>
+        <div class="card-grid" id="artist-grid"></div>
+      </section>
+    </div>
+    
+    <div class="tab-content" id="top-albums">
+      <section>
+        <h2><i class="fas fa-compact-disc"></i>Top Albums of All Time</h2>
+        <div class="card-grid" id="album-grid"></div>
+      </section>
+    </div>
+    
+    <div class="tab-content" id="top-tracks">
+      <section>
+        <h2><i class="fas fa-music"></i>Top Tracks of All Time</h2>
+        <div class="recent-tracks-list" id="track-list"></div>
+      </section>
+    </div>
+    
+    <div class="tab-content" id="loved-tracks">
+      <section>
+        <h2><i class="fas fa-heart"></i>Loved Tracks</h2>
+        <div class="recent-tracks-list" id="loved-list"></div>
+      </section>
+    </div>
+    
+    <div class="footer">
+      <div class="refresh-info">
+        <i class="fas fa-sync-alt refresh-animation"></i>
+        <span>Data refreshes every 30 seconds</span>
+      </div>
+    </div>
+  </div>
+  
   <script>
     const apiKey = '7a207a14237e4d7914a9dbc9b110a38b';
     const username = 'SisyphusButSus';
-
+    let lovedTracksCount = 0;
+    
+    // Tab functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and content
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding content
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+    
+    function createPlaceholderImage(type) {
+      const icons = {
+        artist: 'fa-user',
+        album: 'fa-compact-disc',
+        track: 'fa-music'
+      };
+      return `<div class="placeholder-image"><i class="fas ${icons[type] || 'fa-music'}"></i></div>`;
+    }
+    
     async function fetchTopData() {
       try {
         // Fetch user info
         const userResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${username}&api_key=${apiKey}&format=json`);
         const userData = await userResponse.json();
-
+        
         if (userResponse.ok) {
-          const scrobbles = userData.user.playcount;
-          const creationDate = moment.unix(userData.user.registered.unixtime).format('MMMM Do, YYYY');
-          document.getElementById('scrobbles').textContent = `Total Scrobbles: ${scrobbles}`;
-          document.getElementById('creation-date').textContent = `Since: ${creationDate}`;
-        } else {
-          console.log(`Error: ${userData.message}`);
+          const scrobbles = Number(userData.user.playcount).toLocaleString();
+          const registrationTime = moment.unix(userData.user.registered.unixtime);
+          const sinceYear = registrationTime.format('YYYY');
+          const creationDate = registrationTime.format('MMMM Do, YYYY');
+          
+          document.getElementById('scrobbles-count').textContent = scrobbles;
+          document.getElementById('since-year').textContent = sinceYear;
+          
+          // Update page title with user name
+          document.title = `${userData.user.name}'s Last.fm Stats`;
         }
-
+        
         // Fetch recent tracks
-        const recentResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=10`);
+        const recentResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=10&extended=1`);
         const recentData = await recentResponse.json();
-
+        
         if (recentResponse.ok) {
           const tracks = recentData.recenttracks.track;
           const recentList = document.getElementById('recent-list');
-
+          
           recentList.innerHTML = ''; // Clear the list before updating
-
-          tracks.forEach((track, index) => {
+          
+          tracks.forEach((track) => {
             const name = track.name;
-            const artist = track.artist['#text'];
+            const artist = track.artist.name;
             const isNowPlaying = track['@attr'] && track['@attr'].nowplaying;
             const timestamp = track.date && parseInt(track.date.uts);
-
-            const listItem = document.createElement('li');
-            const trackName = document.createElement('span');
-            trackName.classList.add('track-name');
-            trackName.textContent = name;
-            listItem.appendChild(trackName);
-            listItem.innerHTML += ` by ${artist}`;
+            const imageUrl = track.image.find(image => image.size === 'large')['#text'] || '';
+            
+            const trackItem = document.createElement('div');
+            trackItem.classList.add('track-item');
+            
+            let trackHtml = `
+              <div class="track-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${name}">` : createPlaceholderImage('track')}
+              </div>
+              <div class="track-info">
+                <div class="track-title">${name}</div>
+                <div class="track-artist">${artist}</div>
+              </div>
+              <div class="track-meta">
+            `;
+            
             if (isNowPlaying) {
-              listItem.classList.add('now-playing');
-              listItem.innerHTML += ` <i class="fas fa-music"></i> (Now Playing)`;
-
-            // Get the URL of the largest image
-           const imageUrl = track.image.find(image => image.size === 'extralarge')['#text'];
-
-          // Create new img element
-          const imgElement = document.createElement('img');
-          imgElement.src = imageUrl;
-
-          // Create a new div element
-          const imgWrapper = document.createElement('div');
-          imgWrapper.style.display = 'flex';
-          imgWrapper.style.justifyContent = 'center';
-
-          // Append the img element to the div
-          imgWrapper.appendChild(imgElement);
-
-          // Append the div to the list item
-          listItem.appendChild(imgWrapper);
-
+              trackHtml += `
+                <div class="now-playing">
+                  <div class="now-playing-animation">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                  </div>
+                  Now Playing
+                </div>
+              `;
+            } else if (timestamp) {
+              trackHtml += `<div class="track-timestamp">${moment.unix(timestamp).fromNow()}</div>`;
             }
-            if (timestamp) {
-              const timeElement = document.createElement('span');
-              timeElement.classList.add('text-muted');
-              timeElement.textContent = ` - ${moment.unix(timestamp).fromNow()}`;
-              listItem.appendChild(timeElement);
-            }
-            recentList.appendChild(listItem);
+            
+            trackHtml += `</div>`;
+            trackItem.innerHTML = trackHtml;
+            recentList.appendChild(trackItem);
           });
-        } else {
-          console.log(`Error: ${recentData.message}`);
         }
-
+        
         // Fetch top artists
-        const artistResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=5`);
+        const artistResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=10`);
         const artistData = await artistResponse.json();
-
+        
         if (artistResponse.ok) {
           const artists = artistData.topartists.artist;
-          const artistList = document.getElementById('artist-list');
-
-          artistList.innerHTML = ''; // Clear the list before updating
-
+          const artistGrid = document.getElementById('artist-grid');
+          
+          // Update artist count in header
+          document.getElementById('artists-count').textContent = artistData.topartists['@attr'].total;
+          
+          artistGrid.innerHTML = ''; // Clear the grid before updating
+          
           artists.forEach((artist, index) => {
             const name = artist.name;
             const playCount = artist.playcount;
-
-            const listItem = document.createElement('li');
-            listItem.textContent = `${index + 1}. ${name} - ${playCount} plays`;
-            artistList.appendChild(listItem);
+            const imageUrl = artist.image.find(image => image.size === 'large')['#text'] || '';
+            
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+              <div class="card-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${name}">` : createPlaceholderImage('artist')}
+              </div>
+              <div class="card-content">
+                <div class="card-title">${name}</div>
+                <div class="card-plays">${playCount} plays</div>
+              </div>
+            `;
+            artistGrid.appendChild(card);
           });
-        } else {
-          console.log(`Error: ${artistData.message}`);
         }
-
+        
         // Fetch top albums
-        const albumResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=5`);
+        const albumResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=10`);
         const albumData = await albumResponse.json();
-
+        
         if (albumResponse.ok) {
           const albums = albumData.topalbums.album;
-          const albumList = document.getElementById('album-list');
-
-          albumList.innerHTML = ''; // Clear the list before updating
-
+          const albumGrid = document.getElementById('album-grid');
+          
+          albumGrid.innerHTML = ''; // Clear the grid before updating
+          
           albums.forEach((album, index) => {
             const name = album.name;
             const artist = album.artist.name;
             const playCount = album.playcount;
-
-            const listItem = document.createElement('li');
-            listItem.textContent = `${index + 1}. ${name} by ${artist} - ${playCount} plays`;
-            albumList.appendChild(listItem);
+            const imageUrl = album.image.find(image => image.size === 'large')['#text'] || '';
+            
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+              <div class="card-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${name}">` : createPlaceholderImage('album')}
+              </div>
+              <div class="card-content">
+                <div class="card-title">${name}</div>
+                <div class="card-subtitle">${artist}</div>
+                <div class="card-plays">${playCount} plays</div>
+              </div>
+            `;
+            albumGrid.appendChild(card);
           });
-        } else {
-          console.log(`Error: ${albumData.message}`);
         }
-
+        
         // Fetch top tracks
         const trackResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=${apiKey}&format=json&period=overall&limit=10`);
         const trackData = await trackResponse.json();
-
+        
         if (trackResponse.ok) {
           const tracks = trackData.toptracks.track;
           const trackList = document.getElementById('track-list');
-
+          
           trackList.innerHTML = ''; // Clear the list before updating
-
+          
           tracks.forEach((track, index) => {
             const name = track.name;
             const artist = track.artist.name;
             const playCount = track.playcount;
-
-            const listItem = document.createElement('li');
-            const trackName = document.createElement('span');
-            trackName.classList.add('track-name');
-            trackName.textContent = name;
-            listItem.appendChild(trackName);
-            listItem.innerHTML += ` by ${artist} - ${playCount} plays`;
-            trackList.appendChild(listItem);
+            const imageUrl = track.image.find(image => image.size === 'large')['#text'] || '';
+            
+            const trackItem = document.createElement('div');
+            trackItem.classList.add('track-item');
+            trackItem.innerHTML = `
+              <div class="track-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${name}">` : createPlaceholderImage('track')}
+              </div>
+              <div class="track-info">
+                <div class="track-title">${name}</div>
+                <div class="track-artist">${artist}</div>
+              </div>
+              <div class="track-meta">
+                <div class="track-plays">${playCount} plays</div>
+              </div>
+            `;
+            trackList.appendChild(trackItem);
           });
-        } else {
-          console.log(`Error: ${trackData.message}`);
         }
-
+        
         // Fetch loved tracks
-        const lovedResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=${username}&api_key=${apiKey}&format=json&limit=1000`);
+        const lovedResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=${username}&api_key=${apiKey}&format=json&limit=10`);
         const lovedData = await lovedResponse.json();
-
+        
         if (lovedResponse.ok) {
           const lovedTracks = lovedData.lovedtracks.track;
           const lovedList = document.getElementById('loved-list');
-
+          
+          // Update loved count in header
+          lovedTracksCount = lovedData.lovedtracks['@attr'].total;
+          document.getElementById('loved-count').textContent = lovedTracksCount;
+          
           lovedList.innerHTML = ''; // Clear the list before updating
-
+          
           lovedTracks.forEach((track) => {
             const name = track.name;
             const artist = track.artist.name;
-
-            const listItem = document.createElement('li');
-            const trackName = document.createElement('span');
-            trackName.classList.add('track-name');
-            trackName.textContent = name;
-            listItem.appendChild(trackName);
-            listItem.innerHTML += ` by ${artist} <i class="fas fa-heart heart-icon"></i>`;
-            lovedList.appendChild(listItem);
+            const imageUrl = track.image.find(image => image.size === 'large')['#text'] || '';
+            
+            const trackItem = document.createElement('div');
+            trackItem.classList.add('track-item');
+            trackItem.innerHTML = `
+              <div class="track-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${name}">` : createPlaceholderImage('track')}
+              </div>
+              <div class="track-info">
+                <div class="track-title">${name}</div>
+                <div class="track-artist">${artist}</div>
+              </div>
+              <div class="track-meta">
+                <i class="fas fa-heart loved"></i>
+              </div>
+            `;
+            lovedList.appendChild(trackItem);
           });
-        } else {
-          console.log(`Error: ${lovedData.message}`);
         }
+        
+        // Stop refresh animation after all data is loaded
+        document.querySelector('.refresh-animation').classList.remove('refresh-animation');
+        
       } catch (error) {
         console.log('An error occurred:', error);
       }
     }
-
+    
+    // Refresh animation and update data
+    function refreshData() {
+      document.querySelector('.fa-sync-alt').classList.add('refresh-animation');
+      fetchTopData();
+    }
+    
+    // Initial data fetch
+    fetchTopData();
+    
     // Automatically update every 30 seconds
-    setInterval(fetchTopData, 30000);
-
-    window.addEventListener('DOMContentLoaded', fetchTopData);
+    setInterval(refreshData, 30000);
   </script>
-</head>
-<body>
-  <div class="container">
-    <header>
-    <h1>Last.fm Stats of Saqib Mir</h1>
-
-    <p class="lead" id="scrobbles"></p>
-    <p class="lead" id="creation-date"></p>
-</header>
-    <div>
-      <h2>Recently Scrobbled Tracks</h2>
-      <ul id="recent-list"></ul>
-    </div>
-
-    <div>
-      <h2>Top Artists of All Time</h2>
-      <ul id="artist-list"></ul>
-    </div>
-
-    <div>
-      <h2>Top Albums of All Time</h2>
-      <ul id="album-list"></ul>
-    </div>
-
-    <div>
-      <h2>Top Tracks of All Time</h2>
-      <ul id="track-list"></ul>
-    </div>
-
-    <div>
-      <h2>Loved Tracks</h2>
-      <ul id="loved-list"></ul>
-    </div>
-<br>
-    <div class="disclaimer">
-        <blockquote>All the data gets refreshed every 30 seconds.</blockquote>
-    </div>
-  </div>
-  <hr>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
-
