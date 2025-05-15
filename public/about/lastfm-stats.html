@@ -196,6 +196,25 @@
       background-color: var(--surface-light);
     }
     
+    .track-item.now-playing-item {
+      padding: 16px;
+      background-color: rgba(29, 185, 84, 0.1);
+      border: 1px solid rgba(29, 185, 84, 0.2);
+    }
+    
+    .track-item.now-playing-item .track-image {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .track-item.now-playing-item .track-title {
+      font-size: 18px;
+    }
+    
+    .track-item.now-playing-item .track-artist {
+      font-size: 16px;
+    }
+    
     .track-image {
       width: 48px;
       height: 48px;
@@ -256,6 +275,7 @@
       font-size: 14px;
       color: var(--primary);
       font-weight: 600;
+      margin-bottom: 4px;
     }
     
     .now-playing-animation {
@@ -415,7 +435,7 @@
           <i class="fas fa-headphones-alt"></i>
         </div>
         <div class="user-info">
-          <h1>Saqib Mir's Last.fm</h1>
+          <h1>Saqib Mir's Spotify Stats</h1>
           <div class="stats-bar">
             <div class="stat-item">
               <div class="stat-value" id="scrobbles-count">-</div>
@@ -431,7 +451,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-value" id="since-year">-</div>
-              <div class="stat-label">Member Since</div>
+              <div class="stat-label">Member Since (last.fm)</div>
             </div>
           </div>
         </div>
@@ -525,7 +545,7 @@
         if (userResponse.ok) {
           const scrobbles = Number(userData.user.playcount).toLocaleString();
           const registrationTime = moment.unix(userData.user.registered.unixtime);
-          const sinceYear = registrationTime.format('YYYY');
+          const sinceYear = registrationTime.format('MMMM YYYY');
           const creationDate = registrationTime.format('MMMM Do, YYYY');
           
           document.getElementById('scrobbles-count').textContent = scrobbles;
@@ -567,6 +587,7 @@
             `;
             
             if (isNowPlaying) {
+              trackItem.classList.add('now-playing-item');
               trackHtml += `
                 <div class="now-playing">
                   <div class="now-playing-animation">
@@ -600,10 +621,38 @@
           
           artistGrid.innerHTML = ''; // Clear the grid before updating
           
-          artists.forEach((artist, index) => {
+          // First get images for artists using artist.getInfo method
+          const artistsWithImages = await Promise.all(artists.map(async (artist) => {
+            try {
+              const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist.name)}&api_key=${apiKey}&format=json`);
+              const data = await response.json();
+              
+              // Get the largest available image
+              let artistImage = '';
+              if (data.artist && data.artist.image) {
+                const largeImage = data.artist.image.find(img => img.size === 'extralarge' || img.size === 'large');
+                if (largeImage && largeImage['#text']) {
+                  artistImage = largeImage['#text'];
+                }
+              }
+              
+              return {
+                ...artist,
+                artistImage
+              };
+            } catch (error) {
+              console.log(`Error fetching image for ${artist.name}:`, error);
+              return {
+                ...artist,
+                artistImage: ''
+              };
+            }
+          }));
+          
+          artistsWithImages.forEach((artist, index) => {
             const name = artist.name;
             const playCount = artist.playcount;
-            const imageUrl = artist.image.find(image => image.size === 'large')['#text'] || '';
+            const imageUrl = artist.artistImage || artist.image?.find(image => image.size === 'large')?.['#text'] || '';
             
             const card = document.createElement('div');
             card.classList.add('card');
@@ -662,11 +711,39 @@
           
           trackList.innerHTML = ''; // Clear the list before updating
           
-          tracks.forEach((track, index) => {
+          // Get album images for tracks using track.getInfo method
+          const tracksWithImages = await Promise.all(tracks.map(async (track) => {
+            try {
+              const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getInfo&track=${encodeURIComponent(track.name)}&artist=${encodeURIComponent(track.artist.name)}&api_key=${apiKey}&format=json`);
+              const data = await response.json();
+              
+              // Get the largest available image
+              let trackImage = '';
+              if (data.track && data.track.album && data.track.album.image) {
+                const largeImage = data.track.album.image.find(img => img.size === 'large' || img.size === 'extralarge');
+                if (largeImage && largeImage['#text']) {
+                  trackImage = largeImage['#text'];
+                }
+              }
+              
+              return {
+                ...track,
+                trackImage
+              };
+            } catch (error) {
+              console.log(`Error fetching image for ${track.name}:`, error);
+              return {
+                ...track,
+                trackImage: ''
+              };
+            }
+          }));
+          
+          tracksWithImages.forEach((track, index) => {
             const name = track.name;
             const artist = track.artist.name;
             const playCount = track.playcount;
-            const imageUrl = track.image.find(image => image.size === 'large')['#text'] || '';
+            const imageUrl = track.trackImage || track.image?.find(image => image.size === 'large')?.['#text'] || '';
             
             const trackItem = document.createElement('div');
             trackItem.classList.add('track-item');
@@ -700,10 +777,38 @@
           
           lovedList.innerHTML = ''; // Clear the list before updating
           
-          lovedTracks.forEach((track) => {
+          // Get album images for loved tracks using track.getInfo method
+          const lovedTracksWithImages = await Promise.all(lovedTracks.map(async (track) => {
+            try {
+              const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getInfo&track=${encodeURIComponent(track.name)}&artist=${encodeURIComponent(track.artist.name)}&api_key=${apiKey}&format=json`);
+              const data = await response.json();
+              
+              // Get the largest available image
+              let trackImage = '';
+              if (data.track && data.track.album && data.track.album.image) {
+                const largeImage = data.track.album.image.find(img => img.size === 'large' || img.size === 'extralarge');
+                if (largeImage && largeImage['#text']) {
+                  trackImage = largeImage['#text'];
+                }
+              }
+              
+              return {
+                ...track,
+                trackImage
+              };
+            } catch (error) {
+              console.log(`Error fetching image for ${track.name}:`, error);
+              return {
+                ...track,
+                trackImage: ''
+              };
+            }
+          }));
+          
+          lovedTracksWithImages.forEach((track) => {
             const name = track.name;
             const artist = track.artist.name;
-            const imageUrl = track.image.find(image => image.size === 'large')['#text'] || '';
+            const imageUrl = track.trackImage || track.image?.find(image => image.size === 'large')?.['#text'] || '';
             
             const trackItem = document.createElement('div');
             trackItem.classList.add('track-item');
