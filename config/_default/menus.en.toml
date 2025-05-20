@@ -41,6 +41,10 @@
   pageRef = "/chat"
   weight = 60
 
+[[main]]
+  name = "Books"
+  url = "https://calibre.saqibmir.site/#library_id=my_library&panel=book_list"
+  weight = 70
 
 
 #[[main]]
