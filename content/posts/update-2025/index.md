@@ -1,5 +1,5 @@
 ---
-title: "2025 update"
+title: "Life Lately"
 date: 2025-02-11T00:22:54+05:30
 draft: false
 ---

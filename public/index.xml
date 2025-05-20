@@ -7,9 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Saqib Mir</copyright>
-    <lastBuildDate>Tue, 11 Feb 2025 00:22:54 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 May 2025 14:23:07 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2025 update</title>
+      <title>I Bought a New Domain</title>
+      <link>http://localhost:1313/posts/i-bought-a-new-domain/index./</link>
+      <pubDate>Tue, 20 May 2025 14:23:07 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/i-bought-a-new-domain/index./</guid>
+      <description>Introduction # So, I ended up buying a new domain—mostly because it was super cheap. Figured I might as well use it for a year.
+I also signed up for AWS Free Tier, which gives me 750 hours of EC2 usage per month for a whole year. Now that I’ve got both a domain and a VPS, I guess it’s time to become death, destroyer of idle servers.
+I’ve set up a public Calibre server at calibre.</description>
+      
+    </item>
+    
+    <item>
+      <title>Life Lately</title>
       <link>http://localhost:1313/posts/update-2025/</link>
       <pubDate>Tue, 11 Feb 2025 00:22:54 +0530</pubDate>
       
