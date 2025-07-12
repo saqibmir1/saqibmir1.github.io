@@ -21,12 +21,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/update-2025/</loc>
-    <lastmod>2025-02-11T00:22:54+05:30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://localhost:1313/posts/auto-arch-and-hyprland-script-update/</loc>
     <lastmod>2024-01-21T19:59:36+05:30</lastmod>
     <changefreq>daily</changefreq>
