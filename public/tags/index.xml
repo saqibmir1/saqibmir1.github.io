@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Saqib Mir</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on Saqib Mir</description>
+    <title>Tags on SisyphusButSus</title>
+    <link>http://localhost:42297/tags/</link>
+    <description>Recent content in Tags on SisyphusButSus</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2024 Saqib Mir</copyright>
-    <lastBuildDate>Wed, 07 Jun 2023 18:23:07 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:42297/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch-Linux</title>
+      <link>http://localhost:42297/tags/arch-linux/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/tags/arch-linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:42297/tags/automation/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/tags/automation/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hyperland</title>
+      <link>http://localhost:42297/tags/hyperland/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/tags/hyperland/</guid>
+      
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Wed, 07 Jun 2023 18:23:07 +0530</pubDate>
+      <link>http://localhost:42297/tags/linux/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://localhost:42297/tags/linux/</guid>
+      
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Scripts</title>
+      <link>http://localhost:42297/tags/scripts/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/tags/scripts/</guid>
+      
       <description></description>
       
     </item>

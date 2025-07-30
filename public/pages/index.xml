@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on SisyphusButSus</title>
+    <link>http://localhost:42297/pages/</link>
+    <description>Recent content in Pages on SisyphusButSus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="http://localhost:42297/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:42297/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/pages/about/</guid>
+      
+      <description>Greetings, mortal!. I am an outrageous concoction of excessive self-conciousness and meloncholic tendencies, with a dash of quirkiness and a sprinkle of oddball charm. when i&amp;rsquo;m not busy staring at the wall and contemplating the futility of existence, you can usually find me binging on cat videos and tinkering with free and open source software.</description>
+      
+    </item>
+    
+    <item>
+      <title>Chat Box</title>
+      <link>http://localhost:42297/pages/chat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/pages/chat/</guid>
+      
+      <description>	</description>
+      
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:42297/pages/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/pages/contact/</guid>
+      
+      <description>How to reach me? Email: Feel free to reach out to me via email anytime. Matrix: Mostly inactive here, but if you wanna connect more privately, reach me out. Telegram: I&amp;rsquo;m 24/7 active on telegram :) last.fm: Get a glimpse into my favorite songs and artists on Last.fm IRC: sisypus @ libera.chat PGP: Download Here </description>
+      
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>http://localhost:42297/pages/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:42297/pages/links/</guid>
+      
+      <description>Here are some links/bookmarks that i find useful or interesting Interesting Websites by Individuals Websites not about any specific topic, but included because I like their writing.
+bt bikobatanari Jared White Luke Smith Manuel Moreale Webring This website is a part of blackpiratex&amp;rsquo;s webring </description>
+      
+    </item>
+    
+  </channel>
+</rss>

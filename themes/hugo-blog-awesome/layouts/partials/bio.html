@@ -1,0 +1,297 @@
+{{ $avatar_img := .Site.Params.author.avatar }}
+{{ $avatar_img_alt := .Site.Params.author.name }}
+{{ $image := resources.Get $avatar_img }}
+<div class="author">
+    {{ with $image }}
+    {{ if eq .MediaType.SubType "svg" }}
+    <svg width="25em" height="25em" xmlns="http://www.w3.org/2000/svg">
+        <image width="25em" height="25em" href="{{ $image.RelPermalink }}" />
+    </svg>
+    {{ else }}
+    {{ $image1x := $image.Fill "100x100 center webp" }}
+    {{ $image2x := $image.Fill "200x200 center webp" }}
+    {{ $image3x := $image.Fill "300x300 center webp" }}
+    <img
+        class="author-avatar"
+        src="{{ $image1x.RelPermalink }}"
+        srcset="{{ $image2x.RelPermalink }} 2x, {{ $image3x.RelPermalink }} 3x"
+        alt="{{ $avatar_img_alt }}"
+        width="{{ $image1x.Width }}"
+        height="{{ $image1x.Height }}" 
+        style="width: 100px; height: 100px;" />
+    {{ end }}
+    {{ end }}
+    <h2 class="author-name">{{ .Site.Params.author.intro }}</h2>
+    <p class="author-bio">{{ .Site.Params.author.description }}</p>
+    
+    {{/* Now Playing Widget - Custom Integration */}}
+    <a href="https://saqibmir1.github.io/scroblite/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+        <div class="now-playing-widget" id="now-playing-widget" style="
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            background: var(--background-color);
+            border: 1px solid var(--light-border-color, #e6e6e6);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: var(--text-base-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'">
+            <div class="widget-header" style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text-base-color);
+            ">
+                <span id="music-icon">♪</span>
+                <span id="widget-title">Now Playing</span>
+            </div>
+        
+        <div class="loading" id="loading" style="
+            text-align: center;
+            padding: 20px;
+            color: var(--text-base-color);
+            opacity: 0.7;
+        ">
+            <span style="display: inline-block; animation: spin 1s linear infinite; margin-right: 8px;">⟳</span>
+            Loading...
+        </div>
+        
+        <div class="not-playing" id="not-playing" style="
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-base-color);
+            opacity: 0.7;
+            font-style: italic;
+        ">
+            <div>Nothing playing right now</div>
+            <div style="font-size: 11px; margin-top: 4px;">Last updated: <span id="last-updated"></span></div>
+        </div>
+        
+        <div class="now-playing-track" id="now-playing" style="
+            display: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        ">
+            <div class="track-image" id="track-image" style="
+                width: 64px;
+                height: 64px;
+                border-radius: 6px;
+                overflow: hidden;
+                flex-shrink: 0;
+                background: var(--light-border-color, #e6e6e6);
+            ">
+                <div class="placeholder-image" style="
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #ddd, #bbb);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--text-base-color);
+                    font-size: 24px;
+                ">♪</div>
+            </div>
+            <div class="track-info" style="flex: 1; min-width: 0;">
+                <div class="track-title" id="track-title" style="
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: var(--text-base-color);
+                    margin-bottom: 4px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                "></div>
+                <div class="track-artist" id="track-artist" style="
+                    font-size: 14px;
+                    color: var(--text-base-color);
+                    opacity: 0.8;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                "></div>
+                <div class="now-playing-indicator" id="playing-indicator" style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 8px;
+                    font-size: 12px;
+                    color: #1DB954;
+                    font-weight: 600;
+                ">
+                    <div class="visualizer" style="
+                        display: flex;
+                        align-items: flex-end;
+                        height: 16px;
+                        gap: 2px;
+                    ">
+                        <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound1 474ms -800ms linear infinite alternate;"></div>
+                        <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound2 433ms -800ms linear infinite alternate;"></div>
+                        <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound3 407ms -800ms linear infinite alternate;"></div>
+                        <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound4 458ms -800ms linear infinite alternate;"></div>
+                    </div>
+                    <span id="status-text">Now Playing</span>
+                </div>
+                <div class="recent-indicator" id="recent-time" style="
+                    display: none;
+                    font-size: 12px;
+                    color: var(--text-base-color);
+                    opacity: 0.7;
+                    margin-top: 4px;
+                "></div>
+            </div>
+        </div>
+    </a>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes sound1 { 0% { height: 3px; } 100% { height: 16px; } }
+        @keyframes sound2 { 0% { height: 3px; } 100% { height: 14px; } }
+        @keyframes sound3 { 0% { height: 3px; } 100% { height: 12px; } }
+        @keyframes sound4 { 0% { height: 3px; } 100% { height: 15px; } }
+        
+        .track-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 400px) {
+            .now-playing-widget {
+                max-width: 350px !important;
+            }
+            .track-image {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .track-title {
+                font-size: 14px !important;
+            }
+            .track-artist {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+
+    <script>
+    (function() {
+        const apiKey = '7a207a14237e4d7914a9dbc9b110a38b';
+        const username = 'SisyphusButSus';
+        
+        function formatTimeAgo(timestamp) {
+            const now = Date.now() / 1000;
+            const diff = now - timestamp;
+            
+            if (diff < 60) return 'just now';
+            if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+            if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+            return Math.floor(diff / 86400) + 'd ago';
+        }
+        
+        async function updateNowPlaying() {
+            try {
+                const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1&extended=1`);
+                const data = await response.json();
+                
+                if (response.ok && data.recenttracks && data.recenttracks.track) {
+                    const track = Array.isArray(data.recenttracks.track) ? data.recenttracks.track[0] : data.recenttracks.track;
+                    
+                    const name = track.name;
+                    const artist = track.artist.name;
+                    const isNowPlaying = track['@attr'] && track['@attr'].nowplaying;
+                    const timestamp = track.date && parseInt(track.date.uts);
+                    const imageUrl = track.image.find(image => image.size === 'large')?.['#text'] || '';
+                    
+                    // Hide loading
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    if (name && artist) {
+                        // Show track info
+                        document.getElementById('not-playing').style.display = 'none';
+                        document.getElementById('now-playing').style.display = 'flex';
+                        
+                        // Update track info
+                        document.getElementById('track-title').textContent = name;
+                        document.getElementById('track-artist').textContent = artist;
+                        
+                        // Update image
+                        const trackImageEl = document.getElementById('track-image');
+                        if (imageUrl) {
+                            trackImageEl.innerHTML = `<img src="${imageUrl}" alt="${name}">`;
+                        } else {
+                            trackImageEl.innerHTML = '<div class="placeholder-image" style="width: 100%; height: 100%; background: linear-gradient(135deg, #ddd, #bbb); display: flex; justify-content: center; align-items: center; color: var(--text-base-color); font-size: 24px;">♪</div>';
+                        }
+                        
+                        // Update status
+                        const playingIndicator = document.getElementById('playing-indicator');
+                        const statusText = document.getElementById('status-text');
+                        const recentTime = document.getElementById('recent-time');
+                        
+                        if (isNowPlaying) {
+                            playingIndicator.style.display = 'flex';
+                            statusText.textContent = 'Now Playing';
+                            recentTime.style.display = 'none';
+                            
+                            // Update widget header
+                            document.getElementById('widget-title').textContent = 'Now Playing';
+                            document.getElementById('music-icon').textContent = '▶';
+                        } else {
+                            playingIndicator.style.display = 'none';
+                            recentTime.style.display = 'block';
+                            recentTime.textContent = timestamp ? `Last played ${formatTimeAgo(timestamp)}` : 'Recently played';
+                            
+                            // Update widget header
+                            document.getElementById('widget-title').textContent = 'Recently Played';
+                            document.getElementById('music-icon').textContent = '⏸';
+                        }
+                    } else {
+                        showNotPlaying();
+                    }
+                } else {
+                    showNotPlaying();
+                }
+                
+                // Update last updated time
+                const now = new Date();
+                document.getElementById('last-updated').textContent = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+                
+            } catch (error) {
+                console.error('Error fetching now playing:', error);
+                showNotPlaying();
+            }
+        }
+        
+        function showNotPlaying() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('now-playing').style.display = 'none';
+            document.getElementById('not-playing').style.display = 'block';
+            
+            const now = new Date();
+            document.getElementById('last-updated').textContent = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+            
+            // Update widget header
+            document.getElementById('widget-title').textContent = 'Music Status';
+            document.getElementById('music-icon').textContent = '♪';
+        }
+        
+        // Initial load
+        updateNowPlaying();
+        
+        // Update every 30 seconds
+        setInterval(updateNowPlaying, 30000);
+    })();
+    </script>
+</div>
