@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on SisyphusButSus</title>
-    <link>http://localhost:42297/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on SisyphusButSus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:42297/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automation</title>
-      <link>http://localhost:42297/categories/automation/</link>
+      <link>http://localhost:1313/categories/automation/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:42297/categories/automation/</guid>
+      <guid>http://localhost:1313/categories/automation/</guid>
       
       <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Linux</title>
-      <link>http://localhost:42297/categories/linux/</link>
+      <link>http://localhost:1313/categories/linux/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:42297/categories/linux/</guid>
+      <guid>http://localhost:1313/categories/linux/</guid>
       
       <description></description>
       

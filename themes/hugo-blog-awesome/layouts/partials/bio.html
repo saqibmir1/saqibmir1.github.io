@@ -27,95 +27,103 @@
     {{/* Now Playing Widget - Custom Integration */}}
     <a href="https://saqibmir1.github.io/scroblite/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
         <div class="now-playing-widget" id="now-playing-widget" style="
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-            max-width: 450px;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 320px;
             margin-left: auto;
             margin-right: auto;
             background: var(--background-color);
             border: 1px solid var(--light-border-color, #e6e6e6);
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
             color: var(--text-base-color);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             cursor: pointer;
             transition: all 0.2s ease;
-        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)'" 
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'">
-            <div class="widget-header" style="
+        " onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.12)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 4px rgba(0, 0, 0, 0.08)'">
+        <div class="widget-header" style="
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 margin-bottom: 12px;
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 600;
                 color: var(--text-base-color);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
             ">
-                <span id="music-icon">♪</span>
+                <span id="music-icon" style="margin-right: 6px; font-size: 14px;">♪</span>
                 <span id="widget-title">Now Playing</span>
             </div>
         
         <div class="loading" id="loading" style="
             text-align: center;
-            padding: 20px;
+            padding: 24px 16px;
             color: var(--text-base-color);
             opacity: 0.7;
         ">
-            <span style="display: inline-block; animation: spin 1s linear infinite; margin-right: 8px;">⟳</span>
-            Loading...
+            <span style="display: inline-block; animation: spin 1s linear infinite; margin-right: 8px; font-size: 18px;">⟳</span>
+            <div style="font-size: 13px; margin-top: 6px;">Loading...</div>
         </div>
         
         <div class="not-playing" id="not-playing" style="
             display: none;
             text-align: center;
-            padding: 20px;
+            padding: 24px 16px;
             color: var(--text-base-color);
             opacity: 0.7;
             font-style: italic;
         ">
-            <div>Nothing playing right now</div>
-            <div style="font-size: 11px; margin-top: 4px;">Last updated: <span id="last-updated"></span></div>
+            <div style="font-size: 16px; margin-bottom: 6px;">🎵</div>
+            <div style="font-size: 13px; margin-bottom: 6px;">Nothing playing</div>
+            <div style="font-size: 11px; margin-top: 6px;">Updated: <span id="last-updated"></span></div>
         </div>
         
         <div class="now-playing-track" id="now-playing" style="
             display: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
+            padding: 8px;
         ">
             <div class="track-image" id="track-image" style="
-                width: 64px;
-                height: 64px;
-                border-radius: 6px;
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
                 overflow: hidden;
                 flex-shrink: 0;
                 background: var(--light-border-color, #e6e6e6);
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
             ">
                 <div class="placeholder-image" style="
                     width: 100%;
                     height: 100%;
-                    background: linear-gradient(135deg, #ddd, #bbb);
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    color: var(--text-base-color);
-                    font-size: 24px;
+                    color: white;
+                    font-size: 28px;
                 ">♪</div>
             </div>
             <div class="track-info" style="flex: 1; min-width: 0;">
                 <div class="track-title" id="track-title" style="
-                    font-size: 16px;
+                    font-size: 15px;
                     font-weight: 600;
                     color: var(--text-base-color);
                     margin-bottom: 4px;
+                    line-height: 1.2;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 "></div>
                 <div class="track-artist" id="track-artist" style="
-                    font-size: 14px;
+                    font-size: 13px;
                     color: var(--text-base-color);
                     opacity: 0.8;
+                    margin-bottom: 8px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -124,7 +132,7 @@
                     display: flex;
                     align-items: center;
                     gap: 8px;
-                    margin-top: 8px;
+                    margin-top: 6px;
                     font-size: 12px;
                     color: #1DB954;
                     font-weight: 600;
@@ -132,7 +140,7 @@
                     <div class="visualizer" style="
                         display: flex;
                         align-items: flex-end;
-                        height: 16px;
+                        height: 14px;
                         gap: 2px;
                     ">
                         <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound1 474ms -800ms linear infinite alternate;"></div>
@@ -140,14 +148,14 @@
                         <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound3 407ms -800ms linear infinite alternate;"></div>
                         <div class="bar" style="width: 3px; background-color: #1DB954; border-radius: 2px; animation: sound4 458ms -800ms linear infinite alternate;"></div>
                     </div>
-                    <span id="status-text">Now Playing</span>
+                    <span id="status-text">Playing</span>
                 </div>
                 <div class="recent-indicator" id="recent-time" style="
                     display: none;
                     font-size: 12px;
                     color: var(--text-base-color);
                     opacity: 0.7;
-                    margin-top: 4px;
+                    margin-top: 6px;
                 "></div>
             </div>
         </div>
@@ -158,10 +166,10 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        @keyframes sound1 { 0% { height: 3px; } 100% { height: 16px; } }
-        @keyframes sound2 { 0% { height: 3px; } 100% { height: 14px; } }
-        @keyframes sound3 { 0% { height: 3px; } 100% { height: 12px; } }
-        @keyframes sound4 { 0% { height: 3px; } 100% { height: 15px; } }
+        @keyframes sound1 { 0% { height: 3px; } 100% { height: 14px; } }
+        @keyframes sound2 { 0% { height: 3px; } 100% { height: 12px; } }
+        @keyframes sound3 { 0% { height: 3px; } 100% { height: 10px; } }
+        @keyframes sound4 { 0% { height: 3px; } 100% { height: 13px; } }
         
         .track-image img {
             width: 100%;
@@ -169,19 +177,32 @@
             object-fit: cover;
         }
         
+        .now-playing-widget:hover .track-image {
+            transform: scale(1.05);
+            transition: transform 0.25s ease;
+        }
+        
         @media (max-width: 400px) {
             .now-playing-widget {
-                max-width: 350px !important;
+                max-width: 280px !important;
+                margin: 1rem auto !important;
+            }
+            .now-playing-track {
+                gap: 12px !important;
             }
             .track-image {
-                width: 48px !important;
-                height: 48px !important;
+                width: 64px !important;
+                height: 64px !important;
             }
             .track-title {
                 font-size: 14px !important;
             }
             .track-artist {
                 font-size: 12px !important;
+            }
+            .widget-header {
+                font-size: 12px !important;
+                margin-bottom: 10px !important;
             }
         }
     </style>
@@ -232,7 +253,7 @@
                         if (imageUrl) {
                             trackImageEl.innerHTML = `<img src="${imageUrl}" alt="${name}">`;
                         } else {
-                            trackImageEl.innerHTML = '<div class="placeholder-image" style="width: 100%; height: 100%; background: linear-gradient(135deg, #ddd, #bbb); display: flex; justify-content: center; align-items: center; color: var(--text-base-color); font-size: 24px;">♪</div>';
+                            trackImageEl.innerHTML = '<div class="placeholder-image" style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; justify-content: center; align-items: center; color: white; font-size: 28px;">♪</div>';
                         }
                         
                         // Update status
@@ -242,7 +263,7 @@
                         
                         if (isNowPlaying) {
                             playingIndicator.style.display = 'flex';
-                            statusText.textContent = 'Now Playing';
+                            statusText.textContent = 'Playing';
                             recentTime.style.display = 'none';
                             
                             // Update widget header

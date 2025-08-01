@@ -145,13 +145,14 @@ theme = "hugo-blog-awesome"
 name = "github"
 url = "https://github.com/saqibmir1"
 
-[[params.socialIcons]]
-name = "twitter"
-url = "https://twitter.com"
 
 [[params.socialIcons]]
 name = "Rss"
 url = "/index.xml"
+
+[[params.socialIcons]]
+name = "spotify"
+url = "https://open.spotify.com/user/315iacwyweptni7qeyuid4fsfiea?si=bc1f3d76b2854610"
 
 [caches]
   [caches.images]

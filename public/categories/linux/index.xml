@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on SisyphusButSus</title>
-    <link>http://localhost:42297/categories/linux/</link>
+    <link>http://localhost:1313/categories/linux/</link>
     <description>Recent content in Linux on SisyphusButSus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:42297/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Auto Arch and Hyperland Script Update</title>
-      <link>http://localhost:42297/posts/auto-arch-and-hyperland-script-update/</link>
+      <link>http://localhost:1313/posts/auto-arch-and-hyperland-script-update/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:42297/posts/auto-arch-and-hyperland-script-update/</guid>
+      <guid>http://localhost:1313/posts/auto-arch-and-hyperland-script-update/</guid>
       
       <description>Introduction I&amp;rsquo;ve recently made some updates to my Auto Arch and Hyrpland Dotfiles scripts, aiming to streamline the Arch Linux installation process. While I initially thought about combining the two, I decided to keep them separate but interconnected. Now, the Auto Arch script automatically clones the Hyprland Dotfiles repository into the user&amp;rsquo;s home folder, providing a straightforward way to get both Arch Linux and the Hyprland configuration in one go.</description>
       

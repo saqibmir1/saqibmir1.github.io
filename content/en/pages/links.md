@@ -1,5 +1,6 @@
 ---
 title: Links
+toc: false
 ---
 
 ## Here are some links/bookmarks that i find useful or interesting
