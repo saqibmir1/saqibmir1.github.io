@@ -184,9 +184,9 @@ bt bikobatanari Jared White Luke Smith Manuel Moreale Webring This website is a 
       
       <guid>http://localhost:1313/pages/stuff/</guid>
       
-      <description>Here&amp;rsquo;s a collection of my personal projects, experiments, and other interesting things I&amp;rsquo;ve been working on. From creative coding adventures to API integrations, this is where I showcase the stuff that keeps me busy when I&amp;rsquo;m not contemplating the absurdity of existence.
-🎨 Creative Projects Pixels Description of your Pixels project goes here
-Tech Stack: [Add technologies used] Status: [Active/Completed/In Progress] Links: GitHub | Live Demo 🎵 Music &amp;amp; APIs Spotify API Project Description of your Spotify API project goes here</description>
+      <description>Here&amp;rsquo;s a collection of my personal projects, experiments, and other interesting things I&amp;rsquo;ve been working on.
+Projects SusPixels Inspired by r/place. I created my real time collaborative pixel art canvas.
+Tech Stack: Nestjs for backend, Vanillajs for frontend, Postgres for database, websockets for streaming, redis for cache and performance Status: Active | WIP Links: GitHub | Live Scroblite Using last.fm api, i created a dashboard that shows my spotify stats.</description>
       
     </item>
     
