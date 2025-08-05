@@ -74,5 +74,7 @@
     <loc>http://localhost:1313/pages/links/</loc>
   </url><url>
     <loc>http://localhost:1313/pages/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pages/stuff/</loc>
   </url>
 </urlset>

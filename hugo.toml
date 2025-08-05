@@ -60,41 +60,31 @@ theme = "hugo-blog-awesome"
     name = 'Posts'
     url = '/posts/'
     weight = 10
+    [[Languages.en-gb.menu.main]]
+    pageRef="stuff"
+    name = 'Stuff'
+    url = '/stuff/'
+    weight = 20
   [[Languages.en-gb.menu.main]]
     pageRef="about"
     name = 'About'
     url = '/about/'
-    weight = 20
+    weight = 30
   [[Languages.en-gb.menu.main]]
     pageRef="contact"
     name = 'Contact'
     url = '/contact/'
-    weight = 30
+    weight = 40
   [[Languages.en-gb.menu.main]]
     pageRef="links"
     name = 'Links'
     url = '/links/'
-    weight = 40
-  [[Languages.en-gb.menu.main]]
-    pageRef="books"
-    name = 'Books'
-    url = '/books/'
     weight = 50
-  [[Languages.en-gb.menu.main]]
-    pageRef="music"
-    name = 'Music'
-    url = 'https://saqibmir1.github.io/scroblite/'
-    weight = 60
-  [[Languages.en-gb.menu.main]]
-    pageRef="pixels"
-    name = 'Pixels'
-    url = 'https://pixels.saqibmir.site'
-    weight = 70
   [[Languages.en-gb.menu.main]]
   pageRef="chat"
   name = 'Chat'
   url = '/chat/'
-  weight = 80
+  weight = 60
 
 [Languages.en-gb.params]
   sitename = "SisyphusButSus"

@@ -177,5 +177,18 @@ bt bikobatanari Jared White Luke Smith Manuel Moreale Webring This website is a 
       
     </item>
     
+    <item>
+      <title>Projects &amp; Cool Stuff</title>
+      <link>http://localhost:1313/pages/stuff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pages/stuff/</guid>
+      
+      <description>Here&amp;rsquo;s a collection of my personal projects, experiments, and other interesting things I&amp;rsquo;ve been working on. From creative coding adventures to API integrations, this is where I showcase the stuff that keeps me busy when I&amp;rsquo;m not contemplating the absurdity of existence.
+🎨 Creative Projects Pixels Description of your Pixels project goes here
+Tech Stack: [Add technologies used] Status: [Active/Completed/In Progress] Links: GitHub | Live Demo 🎵 Music &amp;amp; APIs Spotify API Project Description of your Spotify API project goes here</description>
+      
+    </item>
+    
   </channel>
 </rss>
