@@ -1,0 +1,48 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts/'
+weight = 20
+
+[[menus.main]]
+name = 'Stuff'
+pageRef = '/stuff/'
+weight = 30
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about/'
+weight = 40
+
+[[menus.main]]
+name = 'Contact'
+pageRef = '/contact/'
+weight = 50
+
+[[menus.main]]
+name = 'Links'
+pageRef = '/links/'
+weight = 60
+
+[[menus.main]]
+name = 'Chat'
+pageRef = '/chat/'
+weight = 70
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags/'
+weight = 80
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"

@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <div class="home-header">
+    <div class="home-text">
+      {{ .Content }}
+    </div>
+    {{ $avatar := resources.Get "images/avatar.jpg" }}
+    {{ if $avatar }}
+      {{ $avatarResized := $avatar.Resize "280x280" }}
+      <img src="{{ $avatarResized.RelPermalink }}" alt="Avatar" id="avatar-img" 
+           srcset="{{ ($avatar.Resize "140x140").RelPermalink }} 1x, {{ $avatarResized.RelPermalink }} 2x">
+    {{ else }}
+      <img src="/avatar.jpg" alt="Avatar" id="avatar-img">
+    {{ end }}
+  </div>
+  <h2 class="posts-heading">Posts</h2>
+  <ul>
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ $posts := (where $pages "Section" "!=" "") }}
+    {{ range first 8 $posts }}
+      <li>
+        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  {{ if gt (len $posts) 8 }}
+    <div class="show-more">
+      <a href="/posts">...show more</a>
+    </div>
+  {{ end }}
+{{ end }}

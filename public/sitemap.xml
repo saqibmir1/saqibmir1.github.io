@@ -2,43 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-20T14:23:07+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/i-bought-a-new-domain/</loc>
     <lastmod>2025-05-20T14:23:07+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-05-20T14:23:07+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/arch-linux/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/auto-arch-and-hyperland-script-update/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/automation/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hyperland/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/linux/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/scripts/</loc>
-    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-20T14:23:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/auto-arch-and-hyprland-script-update/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/software/</loc>
     <lastmod>2024-01-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/how-i-manage-my-passwords/</loc>
@@ -53,8 +29,17 @@
     <loc>http://localhost:1313/posts/building-my-site-with-hugo/</loc>
     <lastmod>2023-06-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/custom-roms/</loc>
+    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/paradox-of-choice/</loc>
     <lastmod>2023-03-14T18:22:41+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-01-01T08:30:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-01-01T08:00:00-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/software-recommendation/</loc>
     <lastmod>2022-04-05T18:22:54+05:30</lastmod>
@@ -62,19 +47,16 @@
     <loc>http://localhost:1313/posts/auto-arch/</loc>
     <lastmod>2022-04-02T18:21:12+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/custom-roms/</loc>
-    <lastmod>2022-01-18T18:22:23+05:30</lastmod>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/about/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/chat/</loc>
+    <loc>http://localhost:1313/chat/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/links/</loc>
+    <loc>http://localhost:1313/links/</loc>
   </url><url>
-    <loc>http://localhost:1313/pages/</loc>
-  </url><url>
-    <loc>http://localhost:1313/pages/stuff/</loc>
+    <loc>http://localhost:1313/stuff/</loc>
   </url>
 </urlset>
