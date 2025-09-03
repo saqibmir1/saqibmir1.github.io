@@ -42,7 +42,7 @@ Here's a collection of my personal projects, experiments, and other interesting 
 *Using last.fm api, i created a dashboard that shows my spotify stats. Again, real time*
 - **Tech Stack:** ```lastfm api, vanilla js, css, html```
 - **Features:** [List key features]
-- **Status:** <span class="status-badge status-completed">Completed</span>
+- **Status:** <span class="status-badge status-archive">Moved to Apple Music</span>
 - **Links:** [GitHub](https://github.com/saqibmir1/scroblite) | [Live](https://saqibmir1.github.io/scroblite/)
 
 ### Calibre
