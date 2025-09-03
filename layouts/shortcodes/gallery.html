@@ -88,16 +88,23 @@ function closeLightbox() {
   document.getElementById('lightbox').style.display = 'none';
 }
 document.addEventListener('DOMContentLoaded', function() {
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
   document.querySelectorAll('.gallery-img').forEach(function(img) {
     img.addEventListener('click', function() {
-      document.getElementById('lightbox-img').src = img.getAttribute('data-full');
-      document.getElementById('lightbox').style.display = 'flex';
+      lightboxImg.style.display = 'none';
+      lightbox.style.display = 'flex';
+      var fullSrc = img.getAttribute('data-full');
+      lightboxImg.src = fullSrc;
     });
   });
-  document.getElementById('lightbox-img').addEventListener('click', function() {
+  lightboxImg.addEventListener('load', function() {
+    lightboxImg.style.display = 'block';
+  });
+  lightboxImg.addEventListener('click', function() {
     closeLightbox();
   });
-  document.getElementById('lightbox').addEventListener('click', function(e) {
+  lightbox.addEventListener('click', function(e) {
     if (e.target === this) closeLightbox();
   });
 });
