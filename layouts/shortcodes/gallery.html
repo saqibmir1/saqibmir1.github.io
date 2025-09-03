@@ -1,0 +1,104 @@
+<div class="gallery-masonry">
+  {{ $gallery := resources.Match "gallery/images/*" }}
+  {{ range $gallery }}
+    {{ $thumb := .Fill "400x300" }}
+    <div class="gallery-masonry-item">
+      <img src="{{ $thumb.RelPermalink }}" alt="Gallery image" loading="lazy" class="gallery-img" data-full="{{ .RelPermalink }}" />
+    </div>
+  {{ end }}
+</div>
+
+<div id="lightbox" class="lightbox" style="display:none;">
+  <img id="lightbox-img" src="" alt="Large image" />
+</div>
+
+<style>
+/* Masonry gallery styles */
+.gallery-masonry {
+  column-count: 3;
+  column-gap: 0.3em;
+  margin: 2em 0;
+}
+.gallery-masonry-item {
+  break-inside: avoid;
+  margin-bottom: 0.3em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  background: #23272e;
+  display: block;
+  padding: 0.5em;
+  transition: box-shadow 0.2s;
+}
+.gallery-masonry-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+.gallery-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.gallery-img:hover {
+  transform: scale(1.04);
+}
+@media (max-width: 900px) {
+  .gallery-masonry {
+    column-count: 2;
+    column-gap: 0.2em;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-masonry {
+    column-count: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.15em;
+  }
+  .gallery-masonry-item {
+    margin-bottom: 0;
+  }
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.32);
+}
+</style>
+
+<script>
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.gallery-img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = img.getAttribute('data-full');
+      document.getElementById('lightbox').style.display = 'flex';
+    });
+  });
+  document.getElementById('lightbox-img').addEventListener('click', function() {
+    closeLightbox();
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+});
+</script>
