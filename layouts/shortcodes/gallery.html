@@ -1,9 +1,16 @@
+{{ $base := "https://raw.githubusercontent.com/saqibmir1/pixelrack/main/gallery/images/" }}
+{{ $images := slice
+  "photo_2025-09-03_14-37-36.jpg"
+  "photo_2025-09-03_14-37-41.jpg"
+  "photo_2025-09-03_14-37-47.jpg"
+  "photo_2025-09-03_14-37-52.jpg"
+  "WhatsApp Image 2025-09-04 at 11.19.10 AM.jpeg"
+  "WhatsApp Image 2025-09-04 at 11.20.11 AM.jpeg"
+}}
 <div class="gallery-masonry">
-  {{ $gallery := resources.Match "gallery/images/*" }}
-  {{ range $gallery }}
-    {{ $thumb := .Fill "400x300" }}
+  {{ range $images }}
     <div class="gallery-masonry-item">
-      <img src="{{ $thumb.RelPermalink }}" alt="Gallery image" loading="lazy" class="gallery-img" data-full="{{ .RelPermalink }}" />
+      <img src="{{ $base }}{{ . }}" alt="Gallery image" loading="lazy" class="gallery-img" data-full="{{ $base }}{{ . }}" />
     </div>
   {{ end }}
 </div>
