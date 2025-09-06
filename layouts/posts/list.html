@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  
+  <div style="margin-bottom: 1.5em;">
+    <a href="/tags/" style="display: inline-block; padding: 8px 16px; background: #2c313a; color: #e0e0e0; text-decoration: none; border-radius: 5px; font-size: 0.9em;">Browse by Tags →</a>
+  </div>
+  
+  <ul>
+    {{ range .Pages }}
+      <li>
+        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

@@ -3,6 +3,47 @@ languageCode = 'en-us'
 title = 'Saqib Mir'
 theme = 'minimalbutsus'
 
+# Main navigation menu
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts/'
+weight = 20
+
+[[menus.main]]
+name = 'Stuff'
+pageRef = '/stuff/'
+weight = 30
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about/'
+weight = 40
+
+[[menus.main]]
+name = 'Contact'
+pageRef = '/contact/'
+weight = 50
+
+[[menus.main]]
+name = 'Links'
+pageRef = '/links/'
+weight = 60
+
+[[menus.main]]
+name = 'Chat'
+pageRef = '/chat/'
+weight = 70
+
+[[menus.main]]
+name = 'Gallery'
+pageRef = '/gallery/'
+weight = 80
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
