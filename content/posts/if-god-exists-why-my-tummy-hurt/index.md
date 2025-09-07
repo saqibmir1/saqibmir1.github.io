@@ -40,4 +40,4 @@ This leads to a formal logical argument known as the Evidential Problem of Evil:
 - Therefore, there does not exist an omnipotent, omniscient, wholly good being.
 	
 ## Conclusion:
-A god who allows such unnecessary suffering, even if for "hidden reasons", is from our standpoint indistinguishable from a malevolent or indifferent being. The more rational conclusion is not that God has secret benevolence beyond our grasp, but that no benevolent God is at work. The tummy ache isn’t a silly meme—it’s a small but telling example of the cracks in the supposed divine plan.
+A god who allows such unnecessary suffering, even if for "hidden reasons", is from our standpoint indistinguishable from a malevolent or indifferent being. The more rational conclusion is not that God has secret benevolence beyond our grasp, but that no benevolent God is at work. The tummy ache isn’t a silly meme. It’s a small but telling example of the cracks in the supposed divine plan.
